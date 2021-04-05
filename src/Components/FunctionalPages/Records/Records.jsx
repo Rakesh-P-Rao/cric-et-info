@@ -28,8 +28,10 @@ class Records extends Component {
               style={{ maxWidth: "18rem" }}
             >
               <div className="card-body">
-                            <h1 className="card-text">Most runs</h1>
-                            <Link className="most runs" to={PAGE_URLS.MOST_RUNS} >View</Link>
+                <h1 className="card-text">Most runs</h1>
+                <Link className="most runs" to={PAGE_URLS.MOST_RUNS}>
+                  View
+                </Link>
               </div>
             </div>
           </div>
@@ -46,8 +48,8 @@ class Records extends Component {
                 </p>
               </div>
             </div>
-                </div>
-                </div>
+          </div>
+        </div>
       </div>
     );
   }

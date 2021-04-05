@@ -30,4 +30,5 @@ export const PAGE_URLS = {
   ALL_STADIUMS: "/all-stadiums",
   RECORDS: "/records",
   MOST_RUNS: "/most-runs",
+  VIEW_PLAYER_INFO: "/view-player-info",
 };

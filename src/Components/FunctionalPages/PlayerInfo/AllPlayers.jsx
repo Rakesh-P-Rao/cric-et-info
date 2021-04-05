@@ -6,7 +6,11 @@ class AllPlayers extends Component {
     this.state = {};
   }
   render() {
-    return <div>AllPlayers</div>;
+    return (
+      <div className="conatiner">
+        <h1>AllPlayers</h1>
+      </div>
+    );
   }
 }
 

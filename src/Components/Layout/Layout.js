@@ -18,6 +18,7 @@ import AddBowlingStyle from "../FunctionalPages/Admin/AddBowlingStyle";
 import AddRole from "../FunctionalPages/Admin/AddRole";
 import AddTeam from "../FunctionalPages/Admin/AddTeam";
 import AddPlayerStats from "../FunctionalPages/Admin/AddPlayerStats";
+import PlayerInfo from "../FunctionalPages/PlayerInfo/PlayerInfo";
 
 class Layout extends Component {
   constructor(props) {
@@ -63,6 +64,7 @@ class Layout extends Component {
             <Route path={PAGE_URLS.ALL_STADIUMS} exact component={Stadiums} />
             <Route path={PAGE_URLS.RECORDS} exact component={Records} />
             <Route path={PAGE_URLS.MOST_RUNS} exact component={MostRuns} />
+            <Route path={PAGE_URLS.VIEW_PLAYER_INFO} exact component={PlayerInfo} />
             <Route path={PAGE_URLS.PAGE_NOT_FOUND} component={PageNotFound} />
           </Switch>
         </main>

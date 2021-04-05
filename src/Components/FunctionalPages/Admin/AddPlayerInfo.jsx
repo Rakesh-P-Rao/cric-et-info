@@ -226,22 +226,6 @@ class AddPlayerInfo extends Component {
                       </div>
                       <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
                         <div className="form-group">
-                          <label>Nick name: </label>
-                          <Field
-                            type="text"
-                            name="nick_name"
-                            className="form-control"
-                            placeholder="Enter nick name"
-                          ></Field>
-                          <ErrorMessage
-                            name="nick_name"
-                            style={{ color: "red" }}
-                            component="div"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
-                        <div className="form-group">
                           <label>Teams: </label>
                           <select
                             defaultValue={this.state.player_info.team_id}
