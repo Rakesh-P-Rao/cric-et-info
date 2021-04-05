@@ -18,12 +18,15 @@ class AddPlayerInfo extends Component {
       nick_name: props.update ? props.player_info.nick_name : "",
       teams: props.update ? props.player_info.teams : "",
       description: props.update ? props.player_info.description : "",
+      team_id: props.update ? props.player_info.team_id : "",
+      bowlingStyle_id: props.update ? props.player_info.bowlingStyle_id : "",
+      battingStyle_id: props.update ? props.player_info.battingStyle_id : "",
+      role_id: props.update ? props.player_info.role_id:"",
     };
 
     this.state = {
       show: false,
       player_info: player_info,
-      //gunNames: this.props.gunNames,
     };
   }
 
@@ -119,16 +122,23 @@ class AddPlayerInfo extends Component {
                           />
                         </div>
                       </div>
-
                       <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
                         <div className="form-group">
                           <label>Role: </label>
-                          <Field
-                            type="text"
-                            name="role"
+                          <select
+                            defaultValue={this.state.player_info.role_id}
                             className="form-control"
-                            placeholder="Enter role"
-                          ></Field>
+                            onChange={(e) => {
+                              setFieldValue("role", e.target.value);
+                            }}
+                          >
+                            <option value="">Select Role</option>
+                            <option value="1">Batsman</option>
+                            <option value="2">WK-Batsman</option>
+                            <option value="3">Batting Allrounder</option>
+                            <option value="4">Bowling Allrounder</option>
+                            <option value="5">Bowler</option>
+                          </select>
                           <ErrorMessage
                             name="role"
                             style={{ color: "red" }}
@@ -139,12 +149,19 @@ class AddPlayerInfo extends Component {
                       <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
                         <div className="form-group">
                           <label>Batting style: </label>
-                          <Field
-                            type="text"
-                            name="batting_style"
+                          <select
+                            defaultValue={
+                              this.state.player_info.battingStyle_id
+                            }
                             className="form-control"
-                            placeholder="Enter batting style"
-                          ></Field>
+                            onChange={(e) => {
+                              setFieldValue("batting_style", e.target.value);
+                            }}
+                          >
+                            <option value="">Select Batting style</option>
+                            <option value="1">Right Handed Bat</option>
+                            <option value="2">Left Handed Bat</option>
+                          </select>
                           <ErrorMessage
                             name="batting_style"
                             style={{ color: "red" }}
@@ -154,13 +171,36 @@ class AddPlayerInfo extends Component {
                       </div>
                       <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
                         <div className="form-group">
-                          <label>Bowling_style: </label>
-                          <Field
-                            type="text"
-                            name="bowling_style"
+                          <label>Bowling style: </label>
+                          <select
+                            defaultValue={
+                              this.state.player_info.bowlingStyle_id
+                            }
                             className="form-control"
-                            placeholder="Enter bowling style"
-                          ></Field>
+                            onChange={(e) => {
+                              setFieldValue("bowling_style", e.target.value);
+                            }}
+                          >
+                            <option value="">Select Bowling style</option>
+                            <option value="1">Right-arm fast</option>
+                            <option value="2">Right-arm fast-medium</option>
+                            <option value="3">Right-arm medium-fast</option>
+                            <option value="4">Right-arm medium</option>
+                            <option value="5">Right-arm medium-slow</option>
+                            <option value="6">Right-arm slow-medium</option>
+                            <option value="7">Right-arm slow</option>
+                            <option value="8">Left-arm fast</option>
+                            <option value="9">Left-arm fast-medium</option>
+                            <option value="10">Left-arm medium-fast</option>
+                            <option value="11">Left-arm medium</option>
+                            <option value="12">Left-arm medium-slow</option>
+                            <option value="13">Left-arm slow-medium</option>
+                            <option value="14">Left-arm slow</option>
+                            <option value="15">Right-arm offbreak</option>
+                            <option value="16">Left-arm orthodox</option>
+                            <option value="17">Right-arm legbreak</option>
+                            <option value="18">Left-arm chinaman</option>
+                          </select>
                           <ErrorMessage
                             name="bowling_style"
                             style={{ color: "red" }}
@@ -203,12 +243,28 @@ class AddPlayerInfo extends Component {
                       <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
                         <div className="form-group">
                           <label>Teams: </label>
-                          <Field
-                            type="text"
-                            name="teams"
+                          <select
+                            defaultValue={this.state.player_info.team_id}
                             className="form-control"
-                            placeholder="Enter teams"
-                          ></Field>
+                            onChange={(e) => {
+                              setFieldValue("teams", e.target.value);
+                            }}
+                          >
+                            <option value="">Select Team</option>
+                            <option value="1">AFGHANISTAN</option>
+                            <option value="2">AUSTRALIA</option>
+                            <option value="3">BANGLADESH</option>
+                            <option value="4">ENGLAND</option>
+                            <option value="5">INDIA</option>
+                            <option value="6">IRELAND</option>
+                            <option value="7">NEW ZEALAND</option>
+                            <option value="8">PAKISTAN</option>
+                            <option value="9">SCOTLAND</option>
+                            <option value="10">SOUTH AFRICA</option>
+                            <option value="11">SRI LANKA</option>
+                            <option value="12">WEST INDIES</option>
+                            <option value="13">ZIMBABWE</option>
+                          </select>
                           <ErrorMessage
                             name="teams"
                             style={{ color: "red" }}

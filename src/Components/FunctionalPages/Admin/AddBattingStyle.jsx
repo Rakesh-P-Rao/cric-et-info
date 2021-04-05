@@ -132,6 +132,12 @@ class AddBattingStyle extends Component {
             </Formik>
           </Modal>
         </div>
+        <p>
+          <h1>add batting style in this order</h1>
+          <option value="">Select Type</option>
+          <option value="1">Right Handed Bat</option>
+          <option value="2">Left Handed Bat</option>
+        </p>
       </div>
     );
   }

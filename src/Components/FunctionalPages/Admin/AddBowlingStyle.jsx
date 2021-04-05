@@ -132,6 +132,29 @@ class AddBowlingStyle extends Component {
             </Formik>
           </Modal>
         </div>
+
+        <p>
+          <h1>adding bowling style order</h1>
+          <option value="">Select Type</option>
+          <option value="1">Right-arm fast</option>
+          <option value="2">Right-arm fast-medium</option>
+          <option value="3">Right-arm medium-fast</option>
+          <option value="4">Right-arm medium</option>
+          <option value="5">Right-arm medium-slow</option>
+          <option value="6">Right-arm slow-medium</option>
+          <option value="7">Right-arm slow</option>
+          <option value="8">Left-arm fast</option>
+          <option value="9">Left-arm fast-medium</option>
+          <option value="10">Left-arm medium-fast</option>
+          <option value="11">Left-arm medium</option>
+          <option value="12">Left-arm medium-slow</option>
+          <option value="13">Left-arm slow-medium</option>
+          <option value="14">Left-arm slow</option>
+          <option value="15">Right-arm offbreak</option>
+          <option value="16">Left-arm orthodox</option>
+          <option value="17">Right-arm legbreak</option>
+          <option value="18">Left-arm chinaman</option>
+        </p>
       </div>
     );
   }

@@ -132,6 +132,16 @@ class AddRole extends Component {
             </Formik>
           </Modal>
         </div>
+
+        <p>
+          <h1>add roles in this order</h1>
+          <option value="">Select Role</option>
+          <option value="1">Batsman</option>
+          <option value="2">WK-Batsman</option>
+          <option value="3">Batting Allrounder</option>
+          <option value="4">Bowling Allrounder</option>
+          <option value="5">Bowler</option>
+        </p>
       </div>
     );
   }

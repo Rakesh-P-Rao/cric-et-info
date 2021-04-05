@@ -132,6 +132,24 @@ class AddTeam extends Component {
             </Formik>
           </Modal>
         </div>
+
+        <p>
+          <h1>teams to add in database with id in this order</h1>
+          <option value="">Select Team</option>
+          <option value="1">AFGHANISTAN</option>
+          <option value="2">AUSTRALIA</option>
+          <option value="3">BANGLADESH</option>
+          <option value="4">ENGLAND</option>
+          <option value="5">INDIA</option>
+          <option value="6">IRELAND</option>
+          <option value="7">NEW ZEALAND</option>
+          <option value="8">PAKISTAN</option>
+          <option value="9">SCOTLAND</option>
+          <option value="10">SOUTH AFRICA</option>
+          <option value="11">SRI LANKA</option>
+          <option value="12">WEST INDIES</option>
+          <option value="13">ZIMBABWE</option>
+        </p>
       </div>
     );
   }
