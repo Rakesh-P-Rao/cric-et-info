@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TeamPlayer from './TeamPlayer';
 
 class TeamPlayers extends Component {
     constructor(props) {
@@ -8,21 +9,115 @@ class TeamPlayers extends Component {
     render() { 
         return (
           <div className="container">
-            <h1>(this team players here) through react</h1>
+            <h1>(this team players here) through react, should further go to player info onclick</h1>
             <div className="row">
               <div className="col-6">
-                <div className="card mb-3" style={{ maxWidth: "540px" }}>
-                  <div className="row g-0">
-                    <div className="col-md-4">
-                      <img src="" alt="" />
-                    </div>
-                    <div className="col-md-8">
-                      <div className="card-body">
-                        <h2 className="card-text">player name</h2>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
+              </div>
+              <div className="col-6">
+                <TeamPlayer
+                  teamPlayerImage="player image here"
+                  teamPLayerName="player name here"
+                />
               </div>
             </div>
           </div>

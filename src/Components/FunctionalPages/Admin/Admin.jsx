@@ -52,6 +52,16 @@ class Admin extends Component {
               View Player Info
             </Link>
           </div>
+          <div className="col col-md-2">
+            <Link className="viewstadium" to={PAGE_URLS.VIEW_STADIUM}>
+              View Stadium
+            </Link>
+          </div>
+          <div className="col col-md-2">
+            <Link className="viewstadium" to={PAGE_URLS.VIEW_PLAYER_STATS}>
+              View Player Stats
+            </Link>
+          </div>
         </div>
       </div>
     );

@@ -30,5 +30,9 @@ export const PAGE_URLS = {
   ALL_STADIUMS: "/all-stadiums",
   RECORDS: "/records",
   MOST_RUNS: "/most-runs",
+  // TEMPORARY FOR VIEWING PUPOSES BEFORE ADDING ONCLICK FUNCTION
   VIEW_PLAYER_INFO: "/view-player-info",
+  VIEW_TEAM_PLAYERS: "/view-team-player",
+  VIEW_STADIUM: "/view-stadium",
+  VIEW_PLAYER_STATS:"/view-player-stats",
 };
