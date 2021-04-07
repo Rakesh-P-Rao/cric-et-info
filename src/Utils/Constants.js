@@ -1,0 +1,38 @@
+export const SERVER_ACTIONS = {
+  GET_ALL_GUNS: "/guns",
+  SAVE_GUN: "/create",
+  DELETE_GUN: "/delete",
+  GET_GUNS_TYPES: "/type",
+  GET_COUNT: "/count",
+  GET_ALL_PROFILES: "/profiles",
+  REGISTER_PROFILE: "/register",
+  GET_MY_PROFILE: "/profile",
+  BOOK_A_SLOT: "/book_slot",
+  GET_MY_BOOKINGS: "/bookings",
+  DELETE_BOOKING: "/delete-booking",
+  LOG_IN: "/log-in",
+  CALCULATE_BMI: "/calculate_bmi",
+};
+
+export const PAGE_URLS = {
+  HOME: "/",
+  PAGE_NOT_FOUND: "**",
+  ADMIN: "/admin",
+  ADD_PLAYER_INFO: "/add-player-info",
+  ADD_PLAYER_STATS: "/add-player-stats",
+  ADD_STADIUM: "/add-stadium",
+  ADD_BATTING_STYLE: "/add-batting-style",
+  ADD_BOWLING_STYLE: "/add-bowling-style",
+  ADD_ROLE: "/add-role",
+  ADD_TEAM: "/add-team",
+  TEAMS_VIEW: "/teams-view",
+  ALL_PLAYERS: "/all-players",
+  ALL_STADIUMS: "/all-stadiums",
+  RECORDS: "/records",
+  MOST_RUNS: "/most-runs",
+  // TEMPORARY FOR VIEWING PUPOSES BEFORE ADDING ONCLICK FUNCTION
+  VIEW_PLAYER_INFO: "/view-player-info",
+  VIEW_TEAM_PLAYERS: "/view-team-player",
+  VIEW_STADIUM: "/view-stadium",
+  VIEW_PLAYER_STATS:"/view-player-stats",
+};
