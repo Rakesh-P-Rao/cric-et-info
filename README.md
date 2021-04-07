@@ -1,3 +1,12 @@
+# git pull, push for gitlab
+git pull gitlabOrigin master --allow-unrelated-histories
+git push -u gitlabOrigin master 
+
+# To create merge request with gitlab master or something go to below link
+https://gitlab.com/ice_in_water/cric-et-info/-/merge_requests/new?merge_request%5Bsource_branch%5D=master
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
