@@ -14,12 +14,12 @@ class StadiumForList extends Component {
             >
               <div className="row g-0">
                 <div className="col-md-4">
-                  <img src={this.props.stadiumImage} alt="stadium dp here" />
+                  <img src={this.props.sList.image} alt="stadium dp here" />
                 </div>
                 <div className="col-md-8">
                   <div className="card-body pt-lg-5 ">
                     <h2 className="card-text pt-lg-4">
-                      {this.props.stadiumName}
+                      {this.props.sList.name}
                     </h2>
                   </div>
                 </div>

@@ -1,17 +1,6 @@
 export const SERVER_ACTIONS = {
-  GET_ALL_GUNS: "/guns",
-  SAVE_GUN: "/create",
-  DELETE_GUN: "/delete",
-  GET_GUNS_TYPES: "/type",
-  GET_COUNT: "/count",
-  GET_ALL_PROFILES: "/profiles",
-  REGISTER_PROFILE: "/register",
-  GET_MY_PROFILE: "/profile",
-  BOOK_A_SLOT: "/book_slot",
-  GET_MY_BOOKINGS: "/bookings",
-  DELETE_BOOKING: "/delete-booking",
-  LOG_IN: "/log-in",
-  CALCULATE_BMI: "/calculate_bmi",
+  GET_ALL_STADIUMS: "/all-stadiums",
+  GET_ALL_TEAMS:"/all-teams",
 };
 
 export const PAGE_URLS = {

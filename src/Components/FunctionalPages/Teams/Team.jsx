@@ -12,11 +12,11 @@ class Team extends Component {
           <div className="card mb-3" style={{ maxWidth: "540px" }}>
             <div className="row g-0">
               <div className="col-md-4">
-                <img src={this.props.teamImage} alt="" />
+                <img src={this.props.tList.image} alt="team dp here" />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
-                  <h2 className="card-text">{this.props.teamName}</h2>
+                  <h2 className="card-text pt-lg-3">{this.props.tList.team}</h2>
                 </div>
               </div>
             </div>
