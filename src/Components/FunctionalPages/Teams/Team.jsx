@@ -9,7 +9,7 @@ class Team extends Component {
     return (
       <div className="row">
         <div className="col-6">
-          <div className="card mb-3" style={{ maxWidth: "540px" }}>
+          <div className="card mb-3">
             <div className="row g-0">
               <div className="col-md-4">
                 <img src={this.props.tList.image} alt="team dp here" />

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { saveRoleToList } from "../functionalApiActions";
 
 class AddRole extends Component {
   constructor(props) {
@@ -14,9 +15,23 @@ class AddRole extends Component {
     this.state = {
       show: false,
       role: role,
-      //gunNames: this.props.gunNames,
     };
   }
+
+  addRoleToList = (data, formAction) => {
+    formAction.setSubmitting(true);
+    saveRoleToList(data, formAction).then(
+      (response) => {
+        formAction.setSubmitting(false);
+        //this.props.updateList();
+        this.handleClose();
+        window.location.reload();
+      },
+      (error) => {
+        formAction.setSubmitting(false);
+      }
+    );
+  };
 
   handleShow = () => {
     this.setState({
@@ -53,9 +68,8 @@ class AddRole extends Component {
               )}
             </Modal.Header>
             <Formik
-              // validationSchema={AddGunSchema}
               initialValues={this.state.role}
-              onSubmit={this.role}
+              onSubmit={this.addRoleToList}
               enableReinitialize={true}
             >
               {({ errors, isSubmitting, setFieldValue }) => (
@@ -78,42 +92,6 @@ class AddRole extends Component {
                           />
                         </div>
                       </div>
-
-                      {/*                       
-                      <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
-                        <div className="form-group">
-                          <label>Chooos a gun (optional):</label>
-                          <select
-                            defaultValue={this.state.bookSlot.arsenal_id}
-                            className="form-control"
-                            onChange={(e) => {
-                              setFieldValue("arsenal_id", e.target.value);
-                            }}
-                          >
-                            <option value="">Select Type</option>
-                            {this.props.gunNames.map((names) => (
-                              <option key={names.id} value={names.id}>
-                                {names.name}
-                              </option>
-                            ))}
-                          </select>
-                          <ErrorMessage
-                            name="arsenal_id"
-                            style={{ color: "red" }}
-                            component="div"
-                          />
-                        </div>
-                      </div> 
-
-                      <div className="form-group" hidden>
-                        <Field
-                          name="id"
-                          value={this.state.bookSlot.profile_id}
-                        ></Field>
-                      </div>
-                      <div className="form-group" hidden>
-                        <Field name="id" value={this.state.bookSlot.id}></Field>
-                      </div> */}
                     </div>
                   </Modal.Body>
                   <Modal.Footer>
@@ -132,16 +110,6 @@ class AddRole extends Component {
             </Formik>
           </Modal>
         </div>
-
-        <p>
-          <h1>add roles in this order</h1>
-          <option value="">Select Role</option>
-          <option value="1">Batsman</option>
-          <option value="2">WK-Batsman</option>
-          <option value="3">Batting Allrounder</option>
-          <option value="4">Bowling Allrounder</option>
-          <option value="5">Bowler</option>
-        </p>
       </div>
     );
   }

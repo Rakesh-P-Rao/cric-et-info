@@ -1,6 +1,12 @@
 export const SERVER_ACTIONS = {
+  ADD_TEAM: "/add-team",
+  GET_ALL_TEAMS: "/all-teams",
+  ADD_STADIUM: "/add-stadium",
   GET_ALL_STADIUMS: "/all-stadiums",
-  GET_ALL_TEAMS:"/all-teams",
+  ADD_BATTING_STYLE: "/add-batting-style",
+  ADD_BOWLING_STYLE: "/add-bowling-style",
+  ADD_ROLE: "/add-role",
+  
 };
 
 export const PAGE_URLS = {

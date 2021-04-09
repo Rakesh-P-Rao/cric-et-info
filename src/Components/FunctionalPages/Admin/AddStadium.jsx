@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { saveStadiumToList, getAllTeamsList } from "../functionalApiActions";
 
-class AddStadium extends Component {
+class Stadium extends Component {
   constructor(props) {
     super(props);
 
@@ -13,18 +14,45 @@ class AddStadium extends Component {
       capacity: props.update ? props.stadium.capacity : "",
       ends: props.update ? props.stadium.ends : "",
       city: props.update ? props.stadium.city : "",
-      country: props.update ? props.stadium.country : "",
-      location: props.update ? props.stadium.location : "",
       home_to: props.update ? props.stadium.home_to : "",
       description: props.update ? props.stadium.description : "",
+      image: props.update ? props.stadium.image : "",
+      country: props.update ? props.stadium.team_id : "",
     };
 
     this.state = {
       show: false,
       stadium: stadium,
-      //gunNames: this.props.gunNames,
+      allTeamsList: [],
     };
   }
+
+  componentDidMount() {
+    this.getAllListOfTeams();
+  }
+
+  getAllListOfTeams = (type) => {
+    getAllTeamsList(type).then((response) => {
+      this.setState({
+        allTeamsList: response,
+      });
+    });
+  };
+
+  addStadiumToList = (data, formAction) => {
+    formAction.setSubmitting(true);
+    saveStadiumToList(data, formAction).then(
+      (response) => {
+        formAction.setSubmitting(false);
+        // this.props.updateList();
+        this.handleClose();
+        window.location.reload();
+      },
+      (error) => {
+        formAction.setSubmitting(false);
+      }
+    );
+  };
 
   handleShow = () => {
     this.setState({
@@ -40,8 +68,7 @@ class AddStadium extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Add Stadium</h1>
-        <div>
+        <>
           {!this.props.update ? (
             <Button variant="danger" onClick={this.handleShow}>
               Add Stadium
@@ -61,9 +88,8 @@ class AddStadium extends Component {
               )}
             </Modal.Header>
             <Formik
-              // validationSchema={AddGunSchema}
               initialValues={this.state.stadium}
-              onSubmit={this.stadium}
+              onSubmit={this.addStadiumToList}
               enableReinitialize={true}
             >
               {({ errors, isSubmitting, setFieldValue }) => (
@@ -88,12 +114,12 @@ class AddStadium extends Component {
                       </div>
                       <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
                         <div className="form-group">
-                          <label>Opened on: </label>
+                          <label>Opened : </label>
                           <Field
                             type="text"
                             name="opened"
                             className="form-control"
-                            placeholder="Enter opening year"
+                            placeholder="Year opened"
                           ></Field>
                           <ErrorMessage
                             name="opened"
@@ -109,7 +135,7 @@ class AddStadium extends Component {
                             type="text"
                             name="capacity"
                             className="form-control"
-                            placeholder="Enter stadium capacity"
+                            placeholder="Enter capacity"
                           ></Field>
                           <ErrorMessage
                             name="capacity"
@@ -153,71 +179,79 @@ class AddStadium extends Component {
                       </div>
                       <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
                         <div className="form-group">
-                          <label>Country: </label>
-                          <Field
-                            type="text"
-                            name="country"
-                            className="form-control"
-                            placeholder="Enter country"
-                          ></Field>
-                          <ErrorMessage
-                            name="country"
-                            style={{ color: "red" }}
-                            component="div"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
-                        <div className="form-group">
-                          <label>Location: </label>
-                          <Field
-                            type="text"
-                            name="location"
-                            className="form-control"
-                            placeholder="Enter location"
-                          ></Field>
-                          <ErrorMessage
-                            name="location"
-                            style={{ color: "red" }}
-                            component="div"
-                          />
-                        </div>
-                      </div>
-{/*                       
-                      <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
-                        <div className="form-group">
-                          <label>Chooos a gun (optional):</label>
+                          <label>Country:</label>
                           <select
-                            defaultValue={this.state.bookSlot.arsenal_id}
+                            defaultValue={this.state.stadium.country}
                             className="form-control"
                             onChange={(e) => {
-                              setFieldValue("arsenal_id", e.target.value);
+                              setFieldValue("country", e.target.value);
                             }}
                           >
-                            <option value="">Select Type</option>
-                            {this.props.gunNames.map((names) => (
+                            <option value="">Select Country</option>
+                            {this.state.allTeamsList.map((names) => (
                               <option key={names.id} value={names.id}>
-                                {names.name}
+                                {names.team}
                               </option>
                             ))}
                           </select>
                           <ErrorMessage
-                            name="arsenal_id"
+                            name="country"
                             style={{ color: "red" }}
                             component="div"
                           />
                         </div>
-                      </div> 
-
-                      <div className="form-group" hidden>
-                        <Field
-                          name="id"
-                          value={this.state.bookSlot.profile_id}
-                        ></Field>
+                      </div>
+                      <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
+                        <div className="form-group">
+                          <label>Home to: </label>
+                          <Field
+                            type="text"
+                            name="home_to"
+                            className="form-control"
+                            placeholder="Enter Home to"
+                          ></Field>
+                          <ErrorMessage
+                            name="home_to"
+                            style={{ color: "red" }}
+                            component="div"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
+                        <div className="form-group">
+                          <label>Description: </label>
+                          <Field
+                            type="text"
+                            name="description"
+                            className="form-control"
+                            placeholder="Enter description"
+                          ></Field>
+                          <ErrorMessage
+                            name="description"
+                            style={{ color: "red" }}
+                            component="div"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
+                        <div className="form-group">
+                          <label>Image: </label>
+                          <Field
+                            type="file"
+                            name="image"
+                            className="form-control"
+                            placeholder="Enter image"
+                          ></Field>
+                          <ErrorMessage
+                            name="image"
+                            style={{ color: "red" }}
+                            component="div"
+                          />
+                        </div>
                       </div>
                       <div className="form-group" hidden>
-                        <Field name="id" value={this.state.bookSlot.id}></Field>
-                      </div> */}
+                        <Field name="id" value={this.state.stadium.id}></Field>
+                      </div>
                     </div>
                   </Modal.Body>
                   <Modal.Footer>
@@ -235,10 +269,10 @@ class AddStadium extends Component {
               )}
             </Formik>
           </Modal>
-        </div>
+        </>
       </div>
     );
   }
 }
 
-export default AddStadium;
+export default Stadium;
