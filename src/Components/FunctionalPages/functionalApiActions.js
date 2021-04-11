@@ -59,6 +59,19 @@ export function getAllStadiumsList() {
     );
 }
 
+export function getStadiumById(id) {
+  return new HttpRequest(`${SERVER_ACTIONS.GET_THE_STADIUM}/${id}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
 //////////BATTINGSTYLE/////////
 export function saveBattingStylesToList(data, formAction) {
   return new HttpRequest(`${SERVER_ACTIONS.ADD_BATTING_STYLE}`, "POST", data)

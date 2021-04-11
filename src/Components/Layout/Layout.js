@@ -65,6 +65,7 @@ class Layout extends Component {
             <Route path={PAGE_URLS.TEAMS_VIEW} exact component={Teams} />
             <Route path={PAGE_URLS.ALL_PLAYERS} exact component={AllPlayers} />
             <Route path={PAGE_URLS.ALL_STADIUMS} exact component={Stadiums} />
+            <Route path={PAGE_URLS.VIEW_STADIUM} exact component={Stadium} />
             <Route path={PAGE_URLS.RECORDS} exact component={Records} />
             <Route path={PAGE_URLS.MOST_RUNS} exact component={MostRuns} />
             {/* !------------- temporary routes for viewing ----------------------------!  */}
@@ -78,7 +79,6 @@ class Layout extends Component {
               exact
               component={TeamPlayers}
             />
-            <Route path={PAGE_URLS.VIEW_STADIUM} exact component={Stadium} />
             <Route
               path={PAGE_URLS.VIEW_PLAYER_STATS}
               exact

@@ -7,7 +7,7 @@ class Team extends Component {
   }
   render() {
     return (
-      <div className="row">
+      <div className="row ">
         <div className="col-6">
           <div className="card mb-3">
             <div className="row g-0">

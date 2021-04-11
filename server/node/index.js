@@ -109,6 +109,21 @@ app.get("/all-stadiums", (req, res) => {
   });
 });
 
+app.get("/get-stadium/:id", (req, res) => {
+  const id = req.params.id;
+  db.query(
+    "SELECT si.id, si.name, si.opened, si.capacity, si.ends, si.city, si.home_to, si.description, si.image, ti.team as theTeamName, ti.id as theTeam_id FROM stadium_info si left join teams_info ti on ti.id=si.country WHERE si.id = ?",
+    id,
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
 //////////BATTINGSTYLE/////////
 app.post("/add-batting-style", (req, res) => {
   const id = req.body.id;

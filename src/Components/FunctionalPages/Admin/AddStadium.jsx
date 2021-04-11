@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { saveStadiumToList, getAllTeamsList } from "../functionalApiActions";
 
-class Stadium extends Component {
+class AddStadium extends Component {
   constructor(props) {
     super(props);
 
@@ -275,4 +275,4 @@ class Stadium extends Component {
   }
 }
 
-export default Stadium;
+export default AddStadium;

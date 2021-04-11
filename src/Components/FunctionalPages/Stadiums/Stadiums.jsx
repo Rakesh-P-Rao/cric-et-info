@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
-import StadiumForList from './StadiumForList';
-import { getAllStadiumsList } from "../functionalApiActions";
+import React, { Component } from "react";
+import StadiumForList from "./StadiumForList";
+import {
+  getAllStadiumsList
+} from "../functionalApiActions";
 
 class Stadiums extends Component {
   constructor(props) {
     super(props);
     this.state = {
       allStadiumsList: [],
+      stadium: this.props.match.params,
     };
   }
 
@@ -23,9 +26,9 @@ class Stadiums extends Component {
   };
 
   render() {
+    console.log(this.state.goToStadium);
     return (
       <div className="container">
-        <h1>onclick should go to that particular stadium</h1>
         <div className="row">
           <div className="col-12">
             {this.state.allStadiumsList.map((sList) => (
@@ -37,5 +40,5 @@ class Stadiums extends Component {
     );
   }
 }
- 
+
 export default Stadiums;
