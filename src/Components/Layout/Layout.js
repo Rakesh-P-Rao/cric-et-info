@@ -18,10 +18,10 @@ import AddBowlingStyle from "../FunctionalPages/Admin/AddBowlingStyle";
 import AddRole from "../FunctionalPages/Admin/AddRole";
 import AddTeam from "../FunctionalPages/Admin/AddTeam";
 import AddPlayerStats from "../FunctionalPages/Admin/AddPlayerStats";
-import PlayerInfo from "../FunctionalPages/PlayerInfo/PlayerInfo";
-import TeamPlayers from "../FunctionalPages/Teams/TeamPlayers";
 import Stadium from "../FunctionalPages/Stadiums/Stadium";
 import PlayerStats from "../FunctionalPages/PlayerInfo/PlayerStats";
+import TeamPlayers from "../FunctionalPages/Teams/TeamPlayers";
+import TeamPlayerInfo from "../FunctionalPages/Teams/TeamPlayerInfo";
 
 class Layout extends Component {
   constructor(props) {
@@ -45,6 +45,11 @@ class Layout extends Component {
               component={AddPlayerInfo}
             />
             <Route
+              path={PAGE_URLS.VIEW_TEAM_PLAYER_INFO}
+              exact
+              component={TeamPlayerInfo}
+            />
+            <Route
               path={PAGE_URLS.ADD_PLAYER_STATS}
               exact
               component={AddPlayerStats}
@@ -63,22 +68,17 @@ class Layout extends Component {
             <Route path={PAGE_URLS.ADD_ROLE} exact component={AddRole} />
             <Route path={PAGE_URLS.ADD_TEAM} exact component={AddTeam} />
             <Route path={PAGE_URLS.TEAMS_VIEW} exact component={Teams} />
+            <Route
+              path={PAGE_URLS.TEAM_PLAYER_VIEW}
+              exact
+              component={TeamPlayers}
+            />
             <Route path={PAGE_URLS.ALL_PLAYERS} exact component={AllPlayers} />
             <Route path={PAGE_URLS.ALL_STADIUMS} exact component={Stadiums} />
             <Route path={PAGE_URLS.VIEW_STADIUM} exact component={Stadium} />
             <Route path={PAGE_URLS.RECORDS} exact component={Records} />
             <Route path={PAGE_URLS.MOST_RUNS} exact component={MostRuns} />
             {/* !------------- temporary routes for viewing ----------------------------!  */}
-            <Route
-              path={PAGE_URLS.VIEW_PLAYER_INFO}
-              exact
-              component={PlayerInfo}
-            />
-            <Route
-              path={PAGE_URLS.VIEW_TEAM_PLAYERS}
-              exact
-              component={TeamPlayers}
-            />
             <Route
               path={PAGE_URLS.VIEW_PLAYER_STATS}
               exact

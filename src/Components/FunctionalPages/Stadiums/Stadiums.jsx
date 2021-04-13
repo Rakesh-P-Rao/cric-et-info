@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import StadiumForList from "./StadiumForList";
-import {
-  getAllStadiumsList
-} from "../functionalApiActions";
+import { getAllStadiumsList } from "../functionalApiActions";
 
 class Stadiums extends Component {
   constructor(props) {
     super(props);
     this.state = {
       allStadiumsList: [],
-      stadium: this.props.match.params,
     };
   }
 
@@ -26,7 +23,6 @@ class Stadiums extends Component {
   };
 
   render() {
-    console.log(this.state.goToStadium);
     return (
       <div className="container">
         <div className="row">

@@ -7,7 +7,7 @@ class AllPlayers extends Component {
   }
   render() {
     return (
-      <div className="conatiner">
+      <div className="container">
         <h1>AllPlayers</h1>
       </div>
     );

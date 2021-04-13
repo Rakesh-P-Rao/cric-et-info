@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { savePlayerInfoToList } from "../functionalApiActions";
 
 class AddPlayerInfo extends Component {
   constructor(props) {
@@ -14,14 +15,14 @@ class AddPlayerInfo extends Component {
       role: props.update ? props.player_info.role : "",
       batting_style: props.update ? props.player_info.batting_style : "",
       bowling_style: props.update ? props.player_info.bowling_style : "",
-      height: props.update ? props.player_info.height : "",
       nick_name: props.update ? props.player_info.nick_name : "",
       teams: props.update ? props.player_info.teams : "",
       description: props.update ? props.player_info.description : "",
+      image: props.update ? props.player_info.image : "",
       team_id: props.update ? props.player_info.team_id : "",
       bowlingStyle_id: props.update ? props.player_info.bowlingStyle_id : "",
       battingStyle_id: props.update ? props.player_info.battingStyle_id : "",
-      role_id: props.update ? props.player_info.role_id:"",
+      role_id: props.update ? props.player_info.role_id : "",
     };
 
     this.state = {
@@ -29,6 +30,21 @@ class AddPlayerInfo extends Component {
       player_info: player_info,
     };
   }
+
+  addPlayerInfoToList = (data, formAction) => {
+    formAction.setSubmitting(true);
+    savePlayerInfoToList(data, formAction).then(
+      (response) => {
+        formAction.setSubmitting(false);
+        //this.props.updateList();
+        this.handleClose();
+        window.location.reload();
+      },
+      (error) => {
+        formAction.setSubmitting(false);
+      }
+    );
+  };
 
   handleShow = () => {
     this.setState({
@@ -67,7 +83,7 @@ class AddPlayerInfo extends Component {
             <Formik
               // validationSchema={AddGunSchema}
               initialValues={this.state.player_info}
-              onSubmit={this.player_info}
+              onSubmit={this.addPlayerInfoToList}
               enableReinitialize={true}
             >
               {({ errors, isSubmitting, setFieldValue }) => (
@@ -210,22 +226,6 @@ class AddPlayerInfo extends Component {
                       </div>
                       <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
                         <div className="form-group">
-                          <label>Height: </label>
-                          <Field
-                            type="text"
-                            name="height"
-                            className="form-control"
-                            placeholder="Enter height"
-                          ></Field>
-                          <ErrorMessage
-                            name="height"
-                            style={{ color: "red" }}
-                            component="div"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
-                        <div className="form-group">
                           <label>Teams: </label>
                           <select
                             defaultValue={this.state.player_info.team_id}
@@ -272,42 +272,22 @@ class AddPlayerInfo extends Component {
                           />
                         </div>
                       </div>
-
-                      {/*                       
                       <div className="col-xl-6 col-lg-6 col-md-6 mb-1">
                         <div className="form-group">
-                          <label>Chooos a gun (optional):</label>
-                          <select
-                            defaultValue={this.state.bookSlot.arsenal_id}
+                          <label>Image: </label>
+                          <Field
+                            type="file"
+                            name="image"
                             className="form-control"
-                            onChange={(e) => {
-                              setFieldValue("arsenal_id", e.target.value);
-                            }}
-                          >
-                            <option value="">Select Type</option>
-                            {this.props.gunNames.map((names) => (
-                              <option key={names.id} value={names.id}>
-                                {names.name}
-                              </option>
-                            ))}
-                          </select>
+                            placeholder="Enter image"
+                          ></Field>
                           <ErrorMessage
-                            name="arsenal_id"
+                            name="image"
                             style={{ color: "red" }}
                             component="div"
                           />
                         </div>
-                      </div> 
-
-                      <div className="form-group" hidden>
-                        <Field
-                          name="id"
-                          value={this.state.bookSlot.profile_id}
-                        ></Field>
                       </div>
-                      <div className="form-group" hidden>
-                        <Field name="id" value={this.state.bookSlot.id}></Field>
-                      </div> */}
                     </div>
                   </Modal.Body>
                   <Modal.Footer>

@@ -11,7 +11,7 @@ class PlayerInfo extends Component {
         <div className="playerInfo">
           <div
             className="card mb-3"
-            style={{ maxWidth: "1200px", height: "2700px" }}
+            style={{ maxWidth: "1200px" }}
           >
             <div className="firstRow">
               <div
@@ -46,9 +46,6 @@ class PlayerInfo extends Component {
                   </li>
                   <li className="list-group-item text-dark fs-5 px-lg-5">
                     Birth place
-                  </li>
-                  <li className="list-group-item text-dark fs-5 px-lg-5">
-                    Height
                   </li>
                   <li className="list-group-item text-dark fs-5 px-lg-5">
                     Role

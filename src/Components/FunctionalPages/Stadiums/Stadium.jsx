@@ -38,8 +38,7 @@ class Stadium extends Component {
                 <div>
                   <h1>{sInfo.name}</h1>
                   <h3>
-                    {sInfo.city}
-                    {sInfo.country}
+                    {sInfo.city}, {sInfo.country}
                   </h3>
                 </div>
                 <div className="row my-3">
@@ -49,25 +48,19 @@ class Stadium extends Component {
                     </p>
                   </div>
                   <div className="col-9 mb-2">
-                    <p className="card-text text-dark fs-5">
-                      {sInfo.capacity}
-                    </p>
+                    <p className="card-text text-dark fs-5">{sInfo.capacity}</p>
                   </div>
                   <div className="col-3 mb-2">
                     <p className="card-text text-dark fs-5 fw-bold">Ends:</p>
                   </div>
                   <div className="col-9 mb-2">
-                    <p className="card-text text-dark fs-5">
-                      {sInfo.ends}
-                    </p>
+                    <p className="card-text text-dark fs-5">{sInfo.ends}</p>
                   </div>
                   <div className="col-3 mb-2">
                     <p className="card-text text-dark fs-5 fw-bold">Home To:</p>
                   </div>
                   <div className="col-9 mb-2">
-                    <p className="card-text text-dark fs-5">
-                      {sInfo.home_to}
-                    </p>
+                    <p className="card-text text-dark fs-5">{sInfo.home_to}</p>
                   </div>
                   <div className="col-3 mb-2 fw-bold">
                     <p className="card-text text-dark fs-5">Location:</p>
@@ -81,9 +74,7 @@ class Stadium extends Component {
                     <p className="card-text text-dark fs-5">Opened:</p>
                   </div>
                   <div className="col-9 mb-2">
-                    <p className="card-text text-dark fs-5">
-                      {sInfo.opened}
-                    </p>
+                    <p className="card-text text-dark fs-5">{sInfo.opened}</p>
                   </div>
                   <div className="col-3 mb-2 fw-bold">
                     <p className="card-text text-dark fs-5">Description:</p>

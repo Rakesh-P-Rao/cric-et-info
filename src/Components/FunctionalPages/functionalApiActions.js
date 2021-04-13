@@ -30,6 +30,33 @@ export function getAllTeamsList() {
     );
 }
 
+export function getTeamPlayersByTeam(id) {
+  return new HttpRequest(`${SERVER_ACTIONS.GET_TEAM_PLAYERS}/${id}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getTeamPlayersById(id) {
+  return new HttpRequest(`${SERVER_ACTIONS.GET_TEAM_PLAYER_INFO}/${id}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+
 //////////STADIUM/////////
 export function saveStadiumToList(data, formAction) {
   return new HttpRequest(`${SERVER_ACTIONS.ADD_STADIUM}`, "POST", data)
@@ -115,6 +142,22 @@ export function saveRoleToList(data, formAction) {
       },
       (error) => {
         alert("Error in Adding Role To DataBase !");
+        return Promise.reject(error);
+      }
+    );
+}
+
+//////////PLAYER_INFO/////////
+export function savePlayerInfoToList(data, formAction) {
+  return new HttpRequest(`${SERVER_ACTIONS.ADD_PLAYER_INFO}`, "POST", data)
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        alert("Player Added/Updated To DataBase Successfully !");
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        alert("Error in Adding Player To DataBase !");
         return Promise.reject(error);
       }
     );
