@@ -56,6 +56,53 @@ export function getTeamPlayersById(id) {
     );
 }
 
+export function getTeamPlayersStatsTestById(id) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.GET_TEAM_PLAYER_STATS_TEST}/${id}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getTeamPlayersStatsOdiById(id) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.GET_TEAM_PLAYER_STATS_ODI}/${id}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getTeamPlayersStatsT20ById(id) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.GET_TEAM_PLAYER_STATS_T20}/${id}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
 
 //////////STADIUM/////////
 export function saveStadiumToList(data, formAction) {
@@ -158,6 +205,56 @@ export function savePlayerInfoToList(data, formAction) {
       },
       (error) => {
         alert("Error in Adding Player To DataBase !");
+        return Promise.reject(error);
+      }
+    );
+}
+
+//////////PLAYER_STATS/////////
+export function savePlayerStatstestToList(data, formAction) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.ADD_PLAYER_STATS_TEST}`,
+    "POST",
+    data
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        alert("Player test stats Added/Updated To DataBase Successfully !");
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        alert("Error in Adding Player test stats To DataBase !");
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function savePlayerStatsOdiToList(data, formAction) {
+  return new HttpRequest(`${SERVER_ACTIONS.ADD_PLAYER_STATS_ODI}`, "POST", data)
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        alert("Player odi stats Added/Updated To DataBase Successfully !");
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        alert("Error in Adding Player odi stats To DataBase !");
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function savePlayerStatsT20ToList(data, formAction) {
+  return new HttpRequest(`${SERVER_ACTIONS.ADD_PLAYER_STATS_T20}`, "POST", data)
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        alert("Player t20 stats Added/Updated To DataBase Successfully !");
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        alert("Error in Adding Player t20 stats To DataBase !");
         return Promise.reject(error);
       }
     );

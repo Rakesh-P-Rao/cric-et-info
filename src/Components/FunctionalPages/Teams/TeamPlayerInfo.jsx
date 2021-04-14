@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { getTeamPlayersById } from "../functionalApiActions";
+import { Link } from "react-router-dom";
+import { PAGE_URLS } from "../../../Utils/Constants";
+import TeamPlayerStats from "./TeamPlayerStats";
 
 class TeamPlayerInfo extends Component {
   constructor(props) {
@@ -22,7 +25,7 @@ class TeamPlayerInfo extends Component {
     });
   };
 
-    render() {
+  render() {
     return (
       <div className="container">
         {this.state.teamPlayerInfo.map((teamPlayerInfo) => (
@@ -49,6 +52,17 @@ class TeamPlayerInfo extends Component {
                           <small className=" text-dark fw-bold fs-6">
                             {teamPlayerInfo.team}
                           </small>
+                          <div>
+                            <Link
+                              className="btn btn-danger fs-4"
+                              to={PAGE_URLS.ADD_PLAYER_STATS.replace(
+                                ":id",
+                                teamPlayerInfo.id
+                              )}
+                            >
+                              Add Player stats
+                            </Link>
+                          </div>
                         </p>
                       </div>
                     </div>
@@ -131,6 +145,7 @@ class TeamPlayerInfo extends Component {
             </div>
           </>
         ))}
+        <TeamPlayerStats teamPlayerclicked={this.state.teamPlayerclicked} />
       </div>
     );
   }

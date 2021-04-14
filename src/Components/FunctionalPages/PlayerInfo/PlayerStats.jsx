@@ -30,6 +30,7 @@ class PlayerStats extends Component {
                 <th scope="col">50's</th>
                 <th scope="col">4's</th>
                 <th scope="col">6's</th>
+                <th scope="col">Ducks</th>
               </tr>
             </thead>
             <tbody>
@@ -48,6 +49,7 @@ class PlayerStats extends Component {
                 <td>{this.props.fiftiesTest}</td>
                 <td>{this.props.foursTest}</td>
                 <td>{this.props.sixesTest}</td>
+                <td>{this.props.ducksTest}</td>
               </tr>
               <tr>
                 <th scope="row">ODI</th>
@@ -64,6 +66,7 @@ class PlayerStats extends Component {
                 <td>{this.props.fiftiesODI}</td>
                 <td>{this.props.foursODI}</td>
                 <td>{this.props.sixesODI}</td>
+                <td>{this.props.ducksODI}</td>
               </tr>
               <tr>
                 <th scope="row">T20I</th>
@@ -80,6 +83,7 @@ class PlayerStats extends Component {
                 <td>{this.props.fiftiesT20I}</td>
                 <td>{this.props.foursT20I}</td>
                 <td>{this.props.sixesT20I}</td>
+                <td>{this.props.ducksT20I}</td>
               </tr>
             </tbody>
           </table>
@@ -96,6 +100,7 @@ class PlayerStats extends Component {
                 <th scope="col">Innings</th>
                 <th scope="col">Balls bowled</th>
                 <th scope="col">Runs</th>
+                <th scope="col">Maidens</th>
                 <th scope="col">Wickets</th>
                 <th scope="col">BBI</th>
                 <th scope="col">BBM</th>
@@ -115,6 +120,7 @@ class PlayerStats extends Component {
                 <td>{this.props.ballsBowledTest}</td>
                 <td>{this.props.runsBTest}</td>
                 <td>{this.props.wicketsTest}</td>
+                <td>{this.props.maidensTest}</td>
                 <td>{this.props.bBBITest}</td>
                 <td>{this.props.bBBMTest}</td>
                 <td>{this.props.economyTest}</td>
@@ -131,6 +137,7 @@ class PlayerStats extends Component {
                 <td>{this.props.ballsBowledODI}</td>
                 <td>{this.props.runsBODI}</td>
                 <td>{this.props.wicketsODI}</td>
+                <td>{this.props.maidensODI}</td>
                 <td>{this.props.bBBIODI}</td>
                 <td>{this.props.bBBMODI}</td>
                 <td>{this.props.economyODI}</td>
@@ -147,6 +154,7 @@ class PlayerStats extends Component {
                 <td>{this.props.ballsBowledT20I}</td>
                 <td>{this.props.runsBT20I}</td>
                 <td>{this.props.wicketsT20I}</td>
+                <td>{this.props.maidensT20I}</td>
                 <td>{this.props.bBBIT20I}</td>
                 <td>{this.props.bBBMT20I}</td>
                 <td>{this.props.economyT20I}</td>

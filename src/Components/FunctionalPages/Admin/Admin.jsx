@@ -18,11 +18,6 @@ class Admin extends Component {
             </Link>
           </div>
           <div className="col col-md-2">
-            <Link className="addPlayerStats" to={PAGE_URLS.ADD_PLAYER_STATS}>
-              Add Player Stats
-            </Link>
-          </div>
-          <div className="col col-md-2">
             <Link className="addStadium" to={PAGE_URLS.ADD_STADIUM}>
               Add Stadium
             </Link>

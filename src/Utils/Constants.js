@@ -2,7 +2,10 @@ export const SERVER_ACTIONS = {
   ADD_TEAM: "/add-team",
   GET_ALL_TEAMS: "/all-teams",
   GET_TEAM_PLAYERS: "/get-team-players",
-  GET_TEAM_PLAYER_INFO:"/get-team-player-info",
+  GET_TEAM_PLAYER_INFO: "/get-team-player-info",
+  GET_TEAM_PLAYER_STATS_TEST: "/get-team-player-stats-test",
+  GET_TEAM_PLAYER_STATS_ODI: "/get-team-player-stats-odi",
+  GET_TEAM_PLAYER_STATS_T20: "/get-team-player-stats-t20",
   ADD_STADIUM: "/add-stadium",
   GET_ALL_STADIUMS: "/all-stadiums",
   GET_THE_STADIUM: "/get-stadium",
@@ -10,6 +13,9 @@ export const SERVER_ACTIONS = {
   ADD_BOWLING_STYLE: "/add-bowling-style",
   ADD_ROLE: "/add-role",
   ADD_PLAYER_INFO: "/add-player-info",
+  ADD_PLAYER_STATS_TEST: "/add-player-stats-test",
+  ADD_PLAYER_STATS_ODI: "/add-player-stats-odi",
+  ADD_PLAYER_STATS_T20: "/add-player-stats-t20",
 };
 
 export const PAGE_URLS = {
@@ -18,7 +24,7 @@ export const PAGE_URLS = {
   ADMIN: "/admin",
   ADD_PLAYER_INFO: "/add-player-info",
   VIEW_TEAM_PLAYER_INFO: "/view-team-player-info/:id",
-  ADD_PLAYER_STATS: "/add-player-stats",
+  ADD_PLAYER_STATS: "/add-player-stats/:id",
   ADD_STADIUM: "/add-stadium",
   ADD_BATTING_STYLE: "/add-batting-style",
   ADD_BOWLING_STYLE: "/add-bowling-style",

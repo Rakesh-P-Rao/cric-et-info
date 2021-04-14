@@ -47,16 +47,13 @@ app.post("/add-team", (req, res) => {
 });
 
 app.get("/all-teams", (req, res) => {
-  db.query(
-    "SELECT * FROM teams_info",
-    (err, result) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.send(result);
-      }
+  db.query("SELECT * FROM teams_info", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
     }
-  );
+  });
 });
 
 app.get("/get-team-players/:id", (req, res) => {
@@ -89,6 +86,51 @@ app.get("/get-team-player-info/:id", (req, res) => {
   );
 });
 
+app.get("/get-team-player-stats-test/:id", (req, res) => {
+  const id = req.params.id;
+  db.query(
+    "SELECT pst.* FROM player_stats_test pst, player_info pi WHERE pi.id=pst.player_stats_test_id AND pst.player_stats_test_id = ?",
+    id,
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
+app.get("/get-team-player-stats-odi/:id", (req, res) => {
+  const id = req.params.id;
+  db.query(
+    "SELECT pso.* FROM player_stats_odi pso, player_info pi WHERE pi.id=pso.player_stats_odi_id AND pso.player_stats_odi_id = ?",
+    id,
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
+app.get("/get-team-player-stats-t20/:id", (req, res) => {
+  const id = req.params.id;
+  db.query(
+    "SELECT ps2.* FROM player_stats_t20 ps2, player_info pi WHERE pi.id=ps2.player_stats_t20_id AND ps2.player_stats_t20_id = ?",
+    id,
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
 //////////STADIUM/////////
 app.post("/add-stadium", (req, res) => {
   const id = req.body.id;
@@ -105,7 +147,17 @@ app.post("/add-stadium", (req, res) => {
   if (id === "" || id == null) {
     db.query(
       "INSERT INTO stadium_info (name, opened, capacity, ends, city, country, home_to, description, image) VALUES (?,?,?,?,?,?,?,?,?)",
-      [name, opened, capacity, ends, city, country, home_to, description, image],
+      [
+        name,
+        opened,
+        capacity,
+        ends,
+        city,
+        country,
+        home_to,
+        description,
+        image,
+      ],
       (err, result) => {
         if (err) {
           console.log(err);
@@ -117,7 +169,18 @@ app.post("/add-stadium", (req, res) => {
   } else {
     db.query(
       "UPDATE stadium_info SET  name = ?, opened = ?, capacity = ?, ends = ?, city = ?, country=?, home_to = ?, description = ?, image =?  WHERE id = ?",
-      [name, opened, capacity, ends, city, country, home_to, description, image, id],
+      [
+        name,
+        opened,
+        capacity,
+        ends,
+        city,
+        country,
+        home_to,
+        description,
+        image,
+        id,
+      ],
       (err, result) => {
         if (err) {
           console.log(err);
@@ -298,6 +361,367 @@ app.post("/add-player-info", (req, res) => {
         teams,
         description,
         image,
+        id,
+      ],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send(result);
+        }
+      }
+    );
+  }
+});
+
+//////////PLAYER_STATS///////////
+app.post("/add-player-stats-test", (req, res) => {
+  const id = req.body.id;
+  const player_stats_test_id = req.body.player_stats_test_id;
+  const matches = req.body.matches;
+  const innings = req.body.innings;
+  const no_of_notOuts = req.body.no_of_notOuts;
+  const runs = req.body.runs;
+  const high_score = req.body.high_score;
+  const average = req.body.average;
+  const balls_faced = req.body.balls_faced;
+  const strike_rate = req.body.strike_rate;
+  const hundreds = req.body.hundreds;
+  const double_hundreds = req.body.double_hundreds;
+  const fifties = req.body.fifties;
+  const fours = req.body.fours;
+  const sixes = req.body.sixes;
+  const ducks = req.body.ducks;
+  const matchesB = req.body.matchesB;
+  const inningsB = req.body.inningsB;
+  const balls_bowled = req.body.balls_bowled;
+  const runsB = req.body.runsB;
+  const maidens = req.body.maidens;
+  const wickets = req.body.wickets;
+  const bBBI = req.body.bBBI;
+  const bBBM = req.body.bBBM;
+  const economy = req.body.economy;
+  const averageB = req.body.averageB;
+  const strike_rateB = req.body.strike_rateB;
+  const four_fers = req.body.four_fers;
+  const fifers = req.body.fifers;
+  const ten_wickets = req.body.ten_wickets;
+
+  if (id === "" || id == null) {
+    db.query(
+      "INSERT INTO player_stats_test (player_stats_test_id, matches, innings, no_of_notOuts, runs, high_score, average, balls_faced, strike_rate, hundreds, double_hundreds, fifties, fours, sixes, ducks, matchesB, inningsB, balls_bowled, runsB, maidens, wickets, bBBI, bBBM, economy, averageB, strike_rateB, four_fers, fifers, ten_wickets) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      [
+        player_stats_test_id,
+        matches,
+        innings,
+        no_of_notOuts,
+        runs,
+        high_score,
+        average,
+        balls_faced,
+        strike_rate,
+        hundreds,
+        double_hundreds,
+        fifties,
+        fours,
+        sixes,
+        ducks,
+        matchesB,
+        inningsB,
+        balls_bowled,
+        runsB,
+        maidens,
+        wickets,
+        bBBI,
+        bBBM,
+        economy,
+        averageB,
+        strike_rateB,
+        four_fers,
+        fifers,
+        ten_wickets,
+      ],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send("Values Inserted");
+        }
+      }
+    );
+  } else {
+    db.query(
+      "UPDATE player_stats_test SET player_stats_test_id = ?, matches = ?, innings = ?, no_of_notOuts = ?, runs = ?, high_score = ?, average = ?, balls_faced = ?, strike_rate = ?,  hundreds = ?, double_hundreds = ?, fifties = ?, fours = ?, sixes = ?, ducks = ?, matchesB=?, inningsB = ?, balls_bowled = ?, runsB =?, maidens = ?, wickets = ?, bBBI = ?, bBBM = ?, economy = ?, averageB = ?, strike_rateB = ?, four_fers = ?, fifers = ?, ten_wickets =? WHERE id = ?",
+      [
+        player_stats_test_id,
+        matches,
+        innings,
+        no_of_notOuts,
+        runs,
+        high_score,
+        average,
+        balls_faced,
+        strike_rate,
+        hundreds,
+        double_hundreds,
+        fifties,
+        fours,
+        sixes,
+        ducks,
+        matchesB,
+        inningsB,
+        balls_bowled,
+        runsB,
+        maidens,
+        wickets,
+        bBBI,
+        bBBM,
+        economy,
+        averageB,
+        strike_rateB,
+        four_fers,
+        fifers,
+        ten_wickets,
+        id,
+      ],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send(result);
+        }
+      }
+    );
+  }
+});
+
+app.post("/add-player-stats-odi", (req, res) => {
+  const id = req.body.id;
+  const player_stats_odi_id = req.body.player_stats_odi_id;
+  const matches = req.body.matches;
+  const innings = req.body.innings;
+  const no_of_notOuts = req.body.no_of_notOuts;
+  const runs = req.body.runs;
+  const high_score = req.body.high_score;
+  const average = req.body.average;
+  const balls_faced = req.body.balls_faced;
+  const strike_rate = req.body.strike_rate;
+  const hundreds = req.body.hundreds;
+  const double_hundreds = req.body.double_hundreds;
+  const fifties = req.body.fifties;
+  const fours = req.body.fours;
+  const sixes = req.body.sixes;
+  const ducks = req.body.ducks;
+  const matchesB = req.body.matchesB;
+  const inningsB = req.body.inningsB;
+  const balls_bowled = req.body.balls_bowled;
+  const runsB = req.body.runsB;
+  const maidens = req.body.maidens;
+  const wickets = req.body.wickets;
+  const bBBI = req.body.bBBI;
+  const bBBM = req.body.bBBM;
+  const economy = req.body.economy;
+  const averageB = req.body.averageB;
+  const strike_rateB = req.body.strike_rateB;
+  const four_fers = req.body.four_fers;
+  const fifers = req.body.fifers;
+  const ten_wickets = req.body.ten_wickets;
+
+  if (id === "" || id == null) {
+    db.query(
+      "INSERT INTO player_stats_odi (player_stats_odi_id, matches, innings, no_of_notOuts, runs, high_score, average, balls_faced, strike_rate, hundreds, double_hundreds, fifties, fours, sixes, ducks, matchesB, inningsB, balls_bowled, runsB, maidens, wickets, bBBI, bBBM, economy, averageB, strike_rateB, four_fers, fifers, ten_wickets) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      [
+        player_stats_odi_id,
+        matches,
+        innings,
+        no_of_notOuts,
+        runs,
+        high_score,
+        average,
+        balls_faced,
+        strike_rate,
+        hundreds,
+        double_hundreds,
+        fifties,
+        fours,
+        sixes,
+        ducks,
+        matchesB,
+        inningsB,
+        balls_bowled,
+        runsB,
+        maidens,
+        wickets,
+        bBBI,
+        bBBM,
+        economy,
+        averageB,
+        strike_rateB,
+        four_fers,
+        fifers,
+        ten_wickets,
+      ],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send("Values Inserted");
+        }
+      }
+    );
+  } else {
+    db.query(
+      "UPDATE player_stats_odi SET player_stats_odi_id = ?, matches = ?, innings = ?, no_of_notOuts = ?, runs = ?, high_score = ?, average = ?, balls_faced = ?, strike_rate = ?,  hundreds = ?, double_hundreds = ?, fifties = ?, fours = ?, sixes = ?, ducks = ?, matchesB=?, inningsB = ?, balls_bowled = ?, runsB =?, maidens = ?, wickets = ?, bBBI = ?, bBBM = ?, economy = ?, averageB = ?, strike_rateB = ?, four_fers = ?, fifers = ?, ten_wickets =? WHERE id = ?",
+      [
+        player_stats_odi_id,
+        matches,
+        innings,
+        no_of_notOuts,
+        runs,
+        high_score,
+        average,
+        balls_faced,
+        strike_rate,
+        hundreds,
+        double_hundreds,
+        fifties,
+        fours,
+        sixes,
+        ducks,
+        matchesB,
+        inningsB,
+        balls_bowled,
+        runsB,
+        maidens,
+        wickets,
+        bBBI,
+        bBBM,
+        economy,
+        averageB,
+        strike_rateB,
+        four_fers,
+        fifers,
+        ten_wickets,
+        id,
+      ],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send(result);
+        }
+      }
+    );
+  }
+});
+
+app.post("/add-player-stats-t20", (req, res) => {
+  const id = req.body.id;
+  const player_stats_t20_id = req.body.player_stats_t20_id;
+  const matches = req.body.matches;
+  const innings = req.body.innings;
+  const no_of_notOuts = req.body.no_of_notOuts;
+  const runs = req.body.runs;
+  const high_score = req.body.high_score;
+  const average = req.body.average;
+  const balls_faced = req.body.balls_faced;
+  const strike_rate = req.body.strike_rate;
+  const hundreds = req.body.hundreds;
+  const double_hundreds = req.body.double_hundreds;
+  const fifties = req.body.fifties;
+  const fours = req.body.fours;
+  const sixes = req.body.sixes;
+  const ducks = req.body.ducks;
+  const matchesB = req.body.matchesB;
+  const inningsB = req.body.inningsB;
+  const balls_bowled = req.body.balls_bowled;
+  const runsB = req.body.runsB;
+  const maidens = req.body.maidens;
+  const wickets = req.body.wickets;
+  const bBBI = req.body.bBBI;
+  const bBBM = req.body.bBBM;
+  const economy = req.body.economy;
+  const averageB = req.body.averageB;
+  const strike_rateB = req.body.strike_rateB;
+  const four_fers = req.body.four_fers;
+  const fifers = req.body.fifers;
+  const ten_wickets = req.body.ten_wickets;
+
+  if (id === "" || id == null) {
+    db.query(
+      "INSERT INTO player_stats_t20 (player_stats_t20_id, matches, innings, no_of_notOuts, runs, high_score, average, balls_faced, strike_rate, hundreds, double_hundreds, fifties, fours, sixes, ducks, matchesB, inningsB, balls_bowled, runsB, maidens, wickets, bBBI, bBBM, economy, averageB, strike_rateB, four_fers, fifers, ten_wickets) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      [
+        player_stats_t20_id,
+        matches,
+        innings,
+        no_of_notOuts,
+        runs,
+        high_score,
+        average,
+        balls_faced,
+        strike_rate,
+        hundreds,
+        double_hundreds,
+        fifties,
+        fours,
+        sixes,
+        ducks,
+        matchesB,
+        inningsB,
+        balls_bowled,
+        runsB,
+        maidens,
+        wickets,
+        bBBI,
+        bBBM,
+        economy,
+        averageB,
+        strike_rateB,
+        four_fers,
+        fifers,
+        ten_wickets,
+      ],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.send("Values Inserted");
+        }
+      }
+    );
+  } else {
+    db.query(
+      "UPDATE player_stats_t20 SET player_stats_t20_id = ?, matches = ?, innings = ?, no_of_notOuts = ?, runs = ?, high_score = ?, average = ?, balls_faced = ?, strike_rate = ?,  hundreds = ?, double_hundreds = ?, fifties = ?, fours = ?, sixes = ?, ducks = ?, matchesB=?, inningsB = ?, balls_bowled = ?, runsB = ?, maidens = ?, wickets = ?, bBBI = ?, bBBM = ?, economy = ?, averageB = ?, strike_rateB = ?, four_fers = ?, fifers = ?, ten_wickets =? WHERE id = ?",
+      [
+        player_stats_t20_id,
+        matches,
+        innings,
+        no_of_notOuts,
+        runs,
+        high_score,
+        average,
+        balls_faced,
+        strike_rate,
+        hundreds,
+        double_hundreds,
+        fifties,
+        fours,
+        sixes,
+        ducks,
+        matchesB,
+        inningsB,
+        balls_bowled,
+        runsB,
+        maidens,
+        wickets,
+        bBBI,
+        bBBM,
+        economy,
+        averageB,
+        strike_rateB,
+        four_fers,
+        fifers,
+        ten_wickets,
         id,
       ],
       (err, result) => {
