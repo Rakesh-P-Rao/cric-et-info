@@ -16,6 +16,9 @@ export const SERVER_ACTIONS = {
   ADD_PLAYER_STATS_TEST: "/add-player-stats-test",
   ADD_PLAYER_STATS_ODI: "/add-player-stats-odi",
   ADD_PLAYER_STATS_T20: "/add-player-stats-t20",
+  MOST_RUNS_TEST: "/most-runs-test",
+  MOST_RUNS_ODI: "/most-runs-odi",
+  MOST_RUNS_T20: "/most-runs-t20",
 };
 
 export const PAGE_URLS = {
@@ -36,7 +39,7 @@ export const PAGE_URLS = {
   VIEW_STADIUM: "/view-stadium/:id",
   TEAM_PLAYER_VIEW: "/view-team-players/:id",
   RECORDS: "/records",
-  MOST_RUNS: "/most-runs",
-  // TEMPORARY FOR VIEWING PUPOSES BEFORE ADDING ONCLICK FUNCTION
-  VIEW_PLAYER_STATS: "/view-player-stats",
+  MOST_RUNS_TEST: "/most-runs_test",
+  MOST_RUNS_ODI: "/most-runs-odi",
+  MOST_RUNS_T20: "/most-runs-t20",
 };

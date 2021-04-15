@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { PAGE_URLS } from "../../../Utils/Constants";
 import Record from "./Record";
 
 class Records extends Component {
@@ -15,7 +17,9 @@ class Records extends Component {
             <h3 className="text-center text-dark fw-bolder fs-2">
               Batting Records
             </h3>
-            <Record record="Most Runs" />
+            <Link to={PAGE_URLS.MOST_RUNS_TEST}>
+              <Record record="Most Runs" />
+            </Link>
             <Record record="Most 6's" />
             <Record record="Most 4's" />
             <Record record="Most 50's" />

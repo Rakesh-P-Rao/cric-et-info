@@ -11,7 +11,6 @@ import Stadiums from "../FunctionalPages/Stadiums/Stadiums";
 import Records from "../FunctionalPages/Records/Records";
 import Admin from "../FunctionalPages/Admin/Admin";
 import AddStadium from "../FunctionalPages/Admin/AddStadium";
-import MostRuns from "../FunctionalPages/Records/MostRuns";
 import AddPlayerInfo from "../FunctionalPages/Admin/AddPlayerInfo";
 import AddBattingStyle from "../FunctionalPages/Admin/AddBattingStyle";
 import AddBowlingStyle from "../FunctionalPages/Admin/AddBowlingStyle";
@@ -19,9 +18,11 @@ import AddRole from "../FunctionalPages/Admin/AddRole";
 import AddTeam from "../FunctionalPages/Admin/AddTeam";
 import AddPlayerStats from "../FunctionalPages/Admin/AddPlayerStats";
 import Stadium from "../FunctionalPages/Stadiums/Stadium";
-import PlayerStats from "../FunctionalPages/PlayerInfo/PlayerStats";
 import TeamPlayers from "../FunctionalPages/Teams/TeamPlayers";
 import TeamPlayerInfo from "../FunctionalPages/Teams/TeamPlayerInfo";
+import MostRunsTest from "../FunctionalPages/Records/MostRuns/MostRunsTest";
+import MostRunsOdi from "../FunctionalPages/Records/MostRuns/MostRunsOdi";
+import MostRunsT20 from "../FunctionalPages/Records/MostRuns/MostRunsT20";
 
 class Layout extends Component {
   constructor(props) {
@@ -77,12 +78,20 @@ class Layout extends Component {
             <Route path={PAGE_URLS.ALL_STADIUMS} exact component={Stadiums} />
             <Route path={PAGE_URLS.VIEW_STADIUM} exact component={Stadium} />
             <Route path={PAGE_URLS.RECORDS} exact component={Records} />
-            <Route path={PAGE_URLS.MOST_RUNS} exact component={MostRuns} />
-            {/* !------------- temporary routes for viewing ----------------------------!  */}
             <Route
-              path={PAGE_URLS.VIEW_PLAYER_STATS}
+              path={PAGE_URLS.MOST_RUNS_TEST}
               exact
-              component={PlayerStats}
+              component={MostRunsTest}
+            />
+            <Route
+              path={PAGE_URLS.MOST_RUNS_ODI}
+              exact
+              component={MostRunsOdi}
+            />
+            <Route
+              path={PAGE_URLS.MOST_RUNS_T20}
+              exact
+              component={MostRunsT20}
             />
             <Route path={PAGE_URLS.PAGE_NOT_FOUND} component={PageNotFound} />
           </Switch>

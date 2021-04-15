@@ -259,3 +259,43 @@ export function savePlayerStatsT20ToList(data, formAction) {
       }
     );
 }
+
+//////////RECORDS/////////
+export function getMostRunsTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_RUNS_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostRunsOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_RUNS_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostRunsT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_RUNS_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
