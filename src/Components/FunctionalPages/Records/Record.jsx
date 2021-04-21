@@ -8,12 +8,14 @@ class Record extends Component {
   render() {
     return (
       <div className="container">
-          <div className="card border-dark mb-3" >
-            <div className="card-body text-dark">
-              <h2 className="card-title text-center">{this.props.record}</h2>
-            </div>
+        <div className="card border-dark mb-3">
+          <div className="card-body text-dark row">
+            <h2 className="card-title text-center">
+              {this.props.record}
+            </h2>
           </div>
         </div>
+      </div>
     );
   }
 }

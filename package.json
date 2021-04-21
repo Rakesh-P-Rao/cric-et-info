@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "cricapi": "^1.2.9",
     "formik": "^2.2.6",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",

@@ -20,18 +20,42 @@ class Records extends Component {
             <Link to={PAGE_URLS.MOST_RUNS_TEST}>
               <Record record="Most Runs" />
             </Link>
-            <Record record="Most 6's" />
-            <Record record="Most 4's" />
-            <Record record="Most 50's" />
-            <Record record="Most centuries" />
-            <Record record="Most 200's" />
-            <Record record="High Scores" />
-            <Record record="Most Not-outs" />
-            <Record record="Most Matches" />
-            <Record record="Most Balls Faced" />
-            <Record record="Best Strike Rate" />
-            <Record record="Best Average" />
-            <Record record="Most Innings Batted" />
+            <Link to={PAGE_URLS.MOST_SIXES_TEST} >
+              <Record record="Most 6's" />
+            </Link>
+            <Link to={PAGE_URLS.MOST_FOURS_TEST}>
+              <Record record="Most 4's" />
+            </Link>
+            <Link to={PAGE_URLS.MOST_FIFTIES_TEST}>
+              <Record record="Most 50's" />
+            </Link>
+            <Link to={PAGE_URLS.MOST_CENTURIES_TEST}>
+              <Record record="Most centuries" />
+            </Link>
+            <Link to={PAGE_URLS.MOST_DOUBLE_HUNDREDS_TEST}>
+              <Record record="Most 200's" />
+            </Link>
+            <Link to={PAGE_URLS.HIGHEST_SCORE_TEST}>
+              <Record record="High Scores" />
+            </Link>
+            <Link to={PAGE_URLS.MOST_NOT_OUTS_TEST}>
+              <Record record="Most Not-outs" />
+            </Link>
+            <Link to={PAGE_URLS.MOST_MATCHES_TEST}>
+              <Record record="Most Matches" />
+            </Link>
+            <Link to={PAGE_URLS.MOST_BALLS_FACED_TEST}>
+              <Record record="Most Balls Faced" />
+            </Link>
+            <Link to={PAGE_URLS.BEST_STRIKE_RATE_TEST}>
+              <Record record="Best Strike Rate" />
+            </Link>
+            <Link to={PAGE_URLS.BEST_AVERAGE_TEST}>
+              <Record record="Best Average" />
+            </Link>
+            <Link to={PAGE_URLS.MOST_INNIGS_BATTED_TEST}>
+              <Record record="Most Innings Batted" />
+            </Link>
           </div>
 
           <div className="col-6">

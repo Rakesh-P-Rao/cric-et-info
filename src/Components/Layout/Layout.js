@@ -23,6 +23,9 @@ import TeamPlayerInfo from "../FunctionalPages/Teams/TeamPlayerInfo";
 import MostRunsTest from "../FunctionalPages/Records/MostRuns/MostRunsTest";
 import MostRunsOdi from "../FunctionalPages/Records/MostRuns/MostRunsOdi";
 import MostRunsT20 from "../FunctionalPages/Records/MostRuns/MostRunsT20";
+import MostSixesTest from "../FunctionalPages/Records/MostSixes/MostSixesTest";
+import MostSixesOdi from "../FunctionalPages/Records/MostSixes/MostSixesOdi";
+import MostSixesT20 from "../FunctionalPages/Records/MostSixes/MostSixesT20";
 
 class Layout extends Component {
   constructor(props) {
@@ -92,6 +95,21 @@ class Layout extends Component {
               path={PAGE_URLS.MOST_RUNS_T20}
               exact
               component={MostRunsT20}
+            />
+            <Route
+              path={PAGE_URLS.MOST_SIXES_TEST}
+              exact
+              component={MostSixesTest}
+            />
+            <Route
+              path={PAGE_URLS.MOST_SIXES_ODI}
+              exact
+              component={MostSixesOdi}
+            />
+            <Route
+              path={PAGE_URLS.MOST_SIXES_T20}
+              exact
+              component={MostSixesT20}
             />
             <Route path={PAGE_URLS.PAGE_NOT_FOUND} component={PageNotFound} />
           </Switch>

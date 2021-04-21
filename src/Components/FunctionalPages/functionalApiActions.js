@@ -261,6 +261,7 @@ export function savePlayerStatsT20ToList(data, formAction) {
 }
 
 //////////RECORDS/////////
+/////MOST_RUNS/////
 export function getMostRunsTestList() {
   return new HttpRequest(`${SERVER_ACTIONS.MOST_RUNS_TEST}`, "GET")
     .requestWithAuthentication()
@@ -289,6 +290,46 @@ export function getMostRunsOdiList() {
 
 export function getMostRunsT20List() {
   return new HttpRequest(`${SERVER_ACTIONS.MOST_RUNS_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_RUNS/////
+export function getMostSixesTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_SIXES_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostSixesOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_SIXES_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostSixesT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_SIXES_T20}`, "GET")
     .requestWithAuthentication()
     .then(
       (response) => {
