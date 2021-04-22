@@ -26,6 +26,7 @@ import MostRunsT20 from "../FunctionalPages/Records/MostRuns/MostRunsT20";
 import MostSixesTest from "../FunctionalPages/Records/MostSixes/MostSixesTest";
 import MostSixesOdi from "../FunctionalPages/Records/MostSixes/MostSixesOdi";
 import MostSixesT20 from "../FunctionalPages/Records/MostSixes/MostSixesT20";
+import PlayerInfo from "../FunctionalPages/PlayerInfo/PlayerInfo";
 
 class Layout extends Component {
   constructor(props) {
@@ -53,6 +54,7 @@ class Layout extends Component {
               exact
               component={TeamPlayerInfo}
             />
+            <Route path={PAGE_URLS.VIEW_PLAYER_INFO} exact component={PlayerInfo} />
             <Route
               path={PAGE_URLS.ADD_PLAYER_STATS}
               exact

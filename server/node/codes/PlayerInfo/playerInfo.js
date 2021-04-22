@@ -63,6 +63,19 @@ const playerInfo = {
     }
   }),
 
+  getPlayerInfo:app.get("/get-player-info", (req, res) => {
+      db.query(
+        "SELECT pi.* FROM player_info pi ORDER BY pi.id",
+        (err, result) => {
+          if (err) {
+            console.log(err);
+          } else {
+            res.send(result);
+          }
+        }
+      );
+    }),
+
   addBattinStyle: app.post("/add-batting-style", (req, res) => {
     const id = req.body.id;
     const batting_style = req.body.batting_style;

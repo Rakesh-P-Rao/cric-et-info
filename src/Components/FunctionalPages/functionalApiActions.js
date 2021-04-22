@@ -210,6 +210,19 @@ export function savePlayerInfoToList(data, formAction) {
     );
 }
 
+export function getPlayerInfoList() {
+  return new HttpRequest(`${SERVER_ACTIONS.GET_PLAYER_INFO}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
 //////////PLAYER_STATS/////////
 export function savePlayerStatstestToList(data, formAction) {
   return new HttpRequest(

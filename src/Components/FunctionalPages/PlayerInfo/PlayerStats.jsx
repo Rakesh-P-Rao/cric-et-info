@@ -1,172 +1,228 @@
 import React, { Component } from "react";
+import {
+  getTeamPlayersStatsTestById,
+  getTeamPlayersStatsOdiById,
+  getTeamPlayersStatsT20ById,
+} from "../functionalApiActions";
 
 class PlayerStats extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      playerStatsTests: [],
+      playerStatsOdi: [],
+      playerStatsT20: [],
+    };
   }
+
+  componentDidMount() {
+    this.getPlayersTestStatsTestById();
+    this.getPlayersOdiStatsTestById();
+    this.getPlayersT20StatsById();
+  }
+
+  getPlayersTestStatsTestById = (id) => {
+    getTeamPlayersStatsTestById(this.props.playerClicked.id).then(
+      (response) => {
+        this.setState({
+          playerStatsTests: response,
+        });
+      }
+    );
+  };
+
+  getPlayersOdiStatsTestById = (id) => {
+    getTeamPlayersStatsOdiById(this.props.playerClicked.id).then((response) => {
+      this.setState({
+        playerStatsOdi: response,
+      });
+    });
+  };
+
+  getPlayersT20StatsById = (id) => {
+    getTeamPlayersStatsT20ById(this.props.playerClicked.id).then((response) => {
+      this.setState({
+        playerStatsT20: response,
+      });
+    });
+  };
+
   render() {
     return (
       <div className="container">
-        <h1>Player Stats</h1>
-        <div>
-          <ul className="list-group list-group-horizontal-xxl">
-            <li className="list-group-item fw-bold fs-4">Batting stats</li>
-          </ul>
-          <table className="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Matches</th>
-                <th scope="col">Innings</th>
-                <th scope="col">Not Outs</th>
-                <th scope="col">Runs</th>
-                <th scope="col">High Score</th>
-                <th scope="col">Average</th>
-                <th scope="col">Balls Faced</th>
-                <th scope="col">Strike Rate</th>
-                <th scope="col">100's</th>
-                <th scope="col">200's</th>
-                <th scope="col">50's</th>
-                <th scope="col">4's</th>
-                <th scope="col">6's</th>
-                <th scope="col">Ducks</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Test</th>
-                <td>{this.props.matchesTest}</td>
-                <td>{this.props.inningsTest}</td>
-                <td>{this.props.notOutsTest}</td>
-                <td>{this.props.runsTest}</td>
-                <td>{this.props.highScoreTest}</td>
-                <td>{this.props.averageTest}</td>
-                <td>{this.props.ballsFacedTest}</td>
-                <td>{this.props.strikeRateTest}</td>
-                <td>{this.props.hundredsTest}</td>
-                <td>{this.props.doubleHundredsTest}</td>
-                <td>{this.props.fiftiesTest}</td>
-                <td>{this.props.foursTest}</td>
-                <td>{this.props.sixesTest}</td>
-                <td>{this.props.ducksTest}</td>
-              </tr>
-              <tr>
-                <th scope="row">ODI</th>
-                <td>{this.props.matchesODI}</td>
-                <td>{this.props.inningsODI}</td>
-                <td>{this.props.notOutsODI}</td>
-                <td>{this.props.runsODI}</td>
-                <td>{this.props.highScoreODI}</td>
-                <td>{this.props.averageODI}</td>
-                <td>{this.props.ballsFacedODI}</td>
-                <td>{this.props.strikeRateODI}</td>
-                <td>{this.props.hundredsODI}</td>
-                <td>{this.props.doubleHundredODI}</td>
-                <td>{this.props.fiftiesODI}</td>
-                <td>{this.props.foursODI}</td>
-                <td>{this.props.sixesODI}</td>
-                <td>{this.props.ducksODI}</td>
-              </tr>
-              <tr>
-                <th scope="row">T20I</th>
-                <td>{this.props.matchesT20I}</td>
-                <td>{this.props.inningsT20I}</td>
-                <td>{this.props.notOutsT20I}</td>
-                <td>{this.props.runsT20I}</td>
-                <td>{this.props.highScoreT20I}</td>
-                <td>{this.props.averageT20I}</td>
-                <td>{this.props.ballsFacedT20I}</td>
-                <td>{this.props.strikeRateT20I}</td>
-                <td>{this.props.hundredsT20I}</td>
-                <td>{this.props.doubleHundredsT20I}</td>
-                <td>{this.props.fiftiesT20I}</td>
-                <td>{this.props.foursT20I}</td>
-                <td>{this.props.sixesT20I}</td>
-                <td>{this.props.ducksT20I}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div>
-          <ul className="list-group list-group-horizontal-xxl">
-            <li className="list-group-item fw-bold fs-4">Bowling stats</li>
-          </ul>
-          <table className="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Matches</th>
-                <th scope="col">Innings</th>
-                <th scope="col">Balls bowled</th>
-                <th scope="col">Runs</th>
-                <th scope="col">Maidens</th>
-                <th scope="col">Wickets</th>
-                <th scope="col">BBI</th>
-                <th scope="col">BBM</th>
-                <th scope="col">Economy</th>
-                <th scope="col">Average</th>
-                <th scope="col">Strike Rate</th>
-                <th scope="col">4W</th>
-                <th scope="col">5W</th>
-                <th scope="col">10W</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Test</th>
-                <td>{this.props.matchesBTest}</td>
-                <td>{this.props.inningsBTest}</td>
-                <td>{this.props.ballsBowledTest}</td>
-                <td>{this.props.runsBTest}</td>
-                <td>{this.props.wicketsTest}</td>
-                <td>{this.props.maidensTest}</td>
-                <td>{this.props.bBBITest}</td>
-                <td>{this.props.bBBMTest}</td>
-                <td>{this.props.economyTest}</td>
-                <td>{this.props.averageBTest}</td>
-                <td>{this.props.strike_rateBTest}</td>
-                <td>{this.props.b4WTest}</td>
-                <td>{this.props.b5WTest}</td>
-                <td>{this.props.b10WTest}</td>
-              </tr>
-              <tr>
-                <th scope="row">ODI</th>
-                <td>{this.props.matchesBODI}</td>
-                <td>{this.props.inningsBODI}</td>
-                <td>{this.props.ballsBowledODI}</td>
-                <td>{this.props.runsBODI}</td>
-                <td>{this.props.wicketsODI}</td>
-                <td>{this.props.maidensODI}</td>
-                <td>{this.props.bBBIODI}</td>
-                <td>{this.props.bBBMODI}</td>
-                <td>{this.props.economyODI}</td>
-                <td>{this.props.averageBODI}</td>
-                <td>{this.props.strike_rateBODI}</td>
-                <td>{this.props.b4WODI}</td>
-                <td>{this.props.b5WODI}</td>
-                <td>{this.props.b10WODI}</td>
-              </tr>
-              <tr>
-                <th scope="row">T20I</th>
-                <td>{this.props.matchesBT20I}</td>
-                <td>{this.props.inningsBT20I}</td>
-                <td>{this.props.ballsBowledT20I}</td>
-                <td>{this.props.runsBT20I}</td>
-                <td>{this.props.wicketsT20I}</td>
-                <td>{this.props.maidensT20I}</td>
-                <td>{this.props.bBBIT20I}</td>
-                <td>{this.props.bBBMT20I}</td>
-                <td>{this.props.economyT20I}</td>
-                <td>{this.props.averageBT20I}</td>
-                <td>{this.props.strike_rateBT20I}</td>
-                <td>{this.props.b4WT20I}</td>
-                <td>{this.props.b5WT20I}</td>
-                <td>{this.props.b10WT20I}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <>
+          <h1>Player Stats</h1>
+          <div>
+            <ul className="list-group list-group-horizontal-xxl">
+              <li className="list-group-item fw-bold fs-4">Batting stats</li>
+            </ul>
+            <table className="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Matches</th>
+                  <th scope="col">Innings</th>
+                  <th scope="col">Not Outs</th>
+                  <th scope="col">Runs</th>
+                  <th scope="col">High Score</th>
+                  <th scope="col">Average</th>
+                  <th scope="col">Balls Faced</th>
+                  <th scope="col">Strike Rate</th>
+                  <th scope="col">100's</th>
+                  <th scope="col">200's</th>
+                  <th scope="col">50's</th>
+                  <th scope="col">4's</th>
+                  <th scope="col">6's</th>
+                  <th scope="col">Ducks</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.playerStatsTests.map((playerStatsTests) => (
+                  <tr>
+                    <th scope="row">Test</th>
+                    <td>{playerStatsTests.matches}</td>
+                    <td>{playerStatsTests.innings}</td>
+                    <td>{playerStatsTests.no_of_notOuts}</td>
+                    <td>{playerStatsTests.runs}</td>
+                    <td>{playerStatsTests.high_score}</td>
+                    <td>{playerStatsTests.average}</td>
+                    <td>{playerStatsTests.balls_faced}</td>
+                    <td>{playerStatsTests.strike_rate}</td>
+                    <td>{playerStatsTests.hundreds}</td>
+                    <td>{playerStatsTests.double_hundreds}</td>
+                    <td>{playerStatsTests.fifties}</td>
+                    <td>{playerStatsTests.fours}</td>
+                    <td>{playerStatsTests.sixes}</td>
+                    <td>{playerStatsTests.ducks}</td>
+                  </tr>
+                ))}
+                {this.state.playerStatsOdi.map((playerStatsOdi) => (
+                  <tr>
+                    <th scope="row">ODI</th>
+                    <td>{playerStatsOdi.matches}</td>
+                    <td>{playerStatsOdi.innings}</td>
+                    <td>{playerStatsOdi.no_of_notOuts}</td>
+                    <td>{playerStatsOdi.runs}</td>
+                    <td>{playerStatsOdi.high_score}</td>
+                    <td>{playerStatsOdi.average}</td>
+                    <td>{playerStatsOdi.balls_faced}</td>
+                    <td>{playerStatsOdi.strike_rate}</td>
+                    <td>{playerStatsOdi.hundreds}</td>
+                    <td>{playerStatsOdi.double_hundreds}</td>
+                    <td>{playerStatsOdi.fifties}</td>
+                    <td>{playerStatsOdi.fours}</td>
+                    <td>{playerStatsOdi.sixes}</td>
+                    <td>{playerStatsOdi.ducks}</td>
+                  </tr>
+                ))}
+                {this.state.playerStatsT20.map((playerStatsT20) => (
+                  <tr>
+                    <th scope="row">T20</th>
+                    <td>{playerStatsT20.matches}</td>
+                    <td>{playerStatsT20.innings}</td>
+                    <td>{playerStatsT20.no_of_notOuts}</td>
+                    <td>{playerStatsT20.runs}</td>
+                    <td>{playerStatsT20.high_score}</td>
+                    <td>{playerStatsT20.average}</td>
+                    <td>{playerStatsT20.balls_faced}</td>
+                    <td>{playerStatsT20.strike_rate}</td>
+                    <td>{playerStatsT20.hundreds}</td>
+                    <td>{playerStatsT20.double_hundreds}</td>
+                    <td>{playerStatsT20.fifties}</td>
+                    <td>{playerStatsT20.fours}</td>
+                    <td>{playerStatsT20.sixes}</td>
+                    <td>{playerStatsT20.ducks}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <ul className="list-group list-group-horizontal-xxl">
+              <li className="list-group-item fw-bold fs-4">Bowling stats</li>
+            </ul>
+            <table className="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Matches</th>
+                  <th scope="col">Innings</th>
+                  <th scope="col">Balls bowled</th>
+                  <th scope="col">Runs</th>
+                  <th scope="col">Maidens</th>
+                  <th scope="col">Wickets</th>
+                  <th scope="col">BBI</th>
+                  <th scope="col">BBM</th>
+                  <th scope="col">Economy</th>
+                  <th scope="col">Average</th>
+                  <th scope="col">Strike Rate</th>
+                  <th scope="col">4W</th>
+                  <th scope="col">5W</th>
+                  <th scope="col">10W</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.playerStatsTests.map((playerStatsTests) => (
+                  <tr>
+                    <th scope="row">Test</th>
+                    <td>{playerStatsTests.matchesB}</td>
+                    <td>{playerStatsTests.inningsB}</td>
+                    <td>{playerStatsTests.balls_bowled}</td>
+                    <td>{playerStatsTests.runsB}</td>
+                    <td>{playerStatsTests.maidens}</td>
+                    <td>{playerStatsTests.wickets}</td>
+                    <td>{playerStatsTests.bBBI}</td>
+                    <td>{playerStatsTests.bBBM}</td>
+                    <td>{playerStatsTests.economy}</td>
+                    <td>{playerStatsTests.averageB}</td>
+                    <td>{playerStatsTests.strike_rateB}</td>
+                    <td>{playerStatsTests.four_fers}</td>
+                    <td>{playerStatsTests.fifers}</td>
+                    <td>{playerStatsTests.ten_wickets}</td>
+                  </tr>
+                ))}
+                {this.state.playerStatsOdi.map((playerStatsOdi) => (
+                  <tr>
+                    <th scope="row">ODI</th>
+                    <td>{playerStatsOdi.matchesB}</td>
+                    <td>{playerStatsOdi.inningsB}</td>
+                    <td>{playerStatsOdi.balls_bowled}</td>
+                    <td>{playerStatsOdi.runsB}</td>
+                    <td>{playerStatsOdi.maidens}</td>
+                    <td>{playerStatsOdi.wickets}</td>
+                    <td>{playerStatsOdi.bBBI}</td>
+                    <td>{playerStatsOdi.bBBM}</td>
+                    <td>{playerStatsOdi.economy}</td>
+                    <td>{playerStatsOdi.averageB}</td>
+                    <td>{playerStatsOdi.strike_rateB}</td>
+                    <td>{playerStatsOdi.four_fers}</td>
+                    <td>{playerStatsOdi.fifers}</td>
+                    <td>{playerStatsOdi.ten_wickets}</td>
+                  </tr>
+                ))}
+                {this.state.playerStatsT20.map((playerStatsT20) => (
+                  <tr>
+                    <th scope="row">T20</th>
+                    <td>{playerStatsT20.matchesB}</td>
+                    <td>{playerStatsT20.inningsB}</td>
+                    <td>{playerStatsT20.balls_bowled}</td>
+                    <td>{playerStatsT20.runsB}</td>
+                    <td>{playerStatsT20.maidens}</td>
+                    <td>{playerStatsT20.wickets}</td>
+                    <td>{playerStatsT20.bBBI}</td>
+                    <td>{playerStatsT20.bBBM}</td>
+                    <td>{playerStatsT20.economy}</td>
+                    <td>{playerStatsT20.averageB}</td>
+                    <td>{playerStatsT20.strike_rateB}</td>
+                    <td>{playerStatsT20.four_fers}</td>
+                    <td>{playerStatsT20.fifers}</td>
+                    <td>{playerStatsT20.ten_wickets}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
       </div>
     );
   }
