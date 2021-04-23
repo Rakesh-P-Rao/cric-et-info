@@ -75,7 +75,7 @@ class TeamPlayerInfo extends Component {
                     </div>
                     <div className="row my-3">
                       <div className="col-3 mb-2">
-                        <p className="card-text text-dark fs-5 fw-bold">
+                        <p className="card-text text-dark fs-5 fw-bold ml-2">
                           Born:
                         </p>
                       </div>
@@ -85,7 +85,7 @@ class TeamPlayerInfo extends Component {
                         </p>
                       </div>
                       <div className="col-3 mb-2">
-                        <p className="card-text text-dark fs-5 fw-bold">
+                        <p className="card-text text-dark fs-5 fw-bold ml-2">
                           Birth place:
                         </p>
                       </div>
@@ -95,7 +95,7 @@ class TeamPlayerInfo extends Component {
                         </p>
                       </div>
                       <div className="col-3 mb-2 fw-bold">
-                        <p className="card-text text-dark fs-5">Role:</p>
+                        <p className="card-text text-dark fs-5 ml-2">Role:</p>
                       </div>
                       <div className="col-9 mb-2">
                         <p className="card-text text-dark fs-5">
@@ -103,7 +103,7 @@ class TeamPlayerInfo extends Component {
                         </p>
                       </div>
                       <div className="col-3 mb-2 fw-bold">
-                        <p className="card-text text-dark fs-5">
+                        <p className="card-text text-dark fs-5 ml-2">
                           Batting style:
                         </p>
                       </div>
@@ -113,7 +113,7 @@ class TeamPlayerInfo extends Component {
                         </p>
                       </div>
                       <div className="col-3 mb-2 fw-bold">
-                        <p className="card-text text-dark fs-5">
+                        <p className="card-text text-dark fs-5 ml-2">
                           Bowling style:
                         </p>
                       </div>
@@ -123,7 +123,7 @@ class TeamPlayerInfo extends Component {
                         </p>
                       </div>
                       <div className="col-3 mb-2 fw-bold">
-                        <p className="card-text text-dark fs-5">Teams:</p>
+                        <p className="card-text text-dark fs-5 ml-2">Teams:</p>
                       </div>
                       <div className="col-9 mb-2">
                         <p className="card-text text-dark fs-5">
@@ -131,7 +131,7 @@ class TeamPlayerInfo extends Component {
                         </p>
                       </div>
                       <div className="col-3 mb-2 fw-bold">
-                        <p className="card-text text-dark fs-5">Description:</p>
+                        <p className="card-text text-dark fs-5 ml-2">Description:</p>
                       </div>
                       <div className="col-9 mb-2">
                         <p className="card-text text-dark fs-5">

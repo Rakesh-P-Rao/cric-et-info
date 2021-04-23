@@ -273,7 +273,8 @@ export function savePlayerStatsT20ToList(data, formAction) {
     );
 }
 
-//////////RECORDS/////////
+///////////////RECORDS/////////////////
+/////BATTING_RECORDS/////
 /////MOST_RUNS/////
 export function getMostRunsTestList() {
   return new HttpRequest(`${SERVER_ACTIONS.MOST_RUNS_TEST}`, "GET")
@@ -314,7 +315,7 @@ export function getMostRunsT20List() {
     );
 }
 
-/////MOST_RUNS/////
+/////MOST_SIXES/////
 export function getMostSixesTestList() {
   return new HttpRequest(`${SERVER_ACTIONS.MOST_SIXES_TEST}`, "GET")
     .requestWithAuthentication()
@@ -343,6 +344,935 @@ export function getMostSixesOdiList() {
 
 export function getMostSixesT20List() {
   return new HttpRequest(`${SERVER_ACTIONS.MOST_SIXES_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_FOURS/////
+export function getMostFoursTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_FOURS_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostFoursOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_FOURS_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostFoursT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_FOURS_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_FIFTIES/////
+export function getMostFiftiesTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_FIFTIES_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostFiftiesOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_FIFTIES_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostFiftiesT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_FIFTIES_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_CENTURIES/////
+export function getMostCenturiesTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_CENTURIES_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostCenturiesOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_CENTURIES_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostCenturiesT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_CENTURIES_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_DOUBLE_HUNDREDS/////
+export function getMostDoubleHundredsTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_DOUBLE_HUNDREDS_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostDoubleHundredsOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_DOUBLE_HUNDREDS_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostDoubleHundredsT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_DOUBLE_HUNDREDS_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////HIGHEST_SCORES/////
+export function getMostHighScoresTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.HIGHEST_SCORE_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostHighScoresOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.HIGHEST_SCORE_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostHighScoresT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.HIGHEST_SCORE_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_NOT_OUTS/////
+export function getMostNotOutsTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_NOT_OUTS_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostNotOutsOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_NOT_OUTS_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostNotOutsT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_NOT_OUTS_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_MATCHES/////
+export function getMostMatchesTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_MATCHES_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostMatchesOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_MATCHES_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostMatchesT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_MATCHES_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_BALLS_FACED/////
+export function getMostBallsFacedTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_BALLS_FACED_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostBallsFacedOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_BALLS_FACED_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostBallsFacedT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_BALLS_FACED_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////BEST_STRIKE_RATE/////
+export function getBestStrikeRateTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_STRIKE_RATE_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestStrikeRateOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_STRIKE_RATE_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestStrikeRateT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_STRIKE_RATE_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////BEST_AVERAGE/////
+export function getBestAverageTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_AVERAGE_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestAverageOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_AVERAGE_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestAverageT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_AVERAGE_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_INNINGS_BATTED/////
+export function getMostInningsBattedTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_INNIGS_BATTED_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostInningsBattedOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_INNIGS_BATTED_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostInningsBattedT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_INNIGS_BATTED_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+/////BOWLING_RECORDS/////
+/////MOST_WICKETS/////
+export function getMostWicketsTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_WICKETS_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostWicketsOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_WICKETS_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostWicketsT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_WICKETS_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////BEST_BBI/////
+export function getBestBBITestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_BBI_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestBBIOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_BBI_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestBBIT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_BBI_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////BEST_BBM/////
+export function getBestBBMTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_BBM_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestBBMOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_BBM_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestBBMT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_BBM_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////BEST_ECONOMY/////
+export function getBestEconomyTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_ECONOMY_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestEconomyOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_ECONOMY_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestEconomyT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_ECONOMY_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_4W/////
+export function getMost4WTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_4W_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMost4WOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_4W_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMost4WT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_4W_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_5W/////
+export function getMost5WTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_5W_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMost5WOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_5W_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMost5WT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_5W_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_10W/////
+export function getMost10WTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_10W_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMost10WOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_10W_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMost10WT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_10W_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_INNINGS_BOWLED/////
+export function getMostInningsBowledTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_INNINGS_BOWLED_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostInningsBowledOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_INNINGS_BOWLED_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostInningsBowledT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_INNINGS_BOWLED_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_BALLS_BOWLED_TEST/////
+export function getMostBallsBowledTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_BALLS_BOWLED_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostBallsBowledOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_BALLS_BOWLED_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostBallsBowledT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_BALLS_BOWLED_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////MOST_RUNS_CONCEDED/////
+export function getMostRunsConcededTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_RUNS_CONCEDED_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostRunsConcededOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_RUNS_CONCEDED_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getMostRunsConcededT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.MOST_RUNS_CONCEDED_T20}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////BEST_BOWLING_STRIKE_RATE/////
+export function getBestBowlingStrikeRateTestList() {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.BEST_BOWLING_STRIKE_RATE_TEST}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestBowlingStrikeRateOdiList() {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.BEST_BOWLING_STRIKE_RATE_ODI}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestBowlingStrikeRateT20List() {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.BEST_BOWLING_STRIKE_RATE_T20}`,
+    "GET"
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+/////BEST_AVERAGE/////
+export function getBestBowlingAverageTestList() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_BOWLING_AVERAGE_TEST}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestBowlingAverageOdiList() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_BOWLING_AVERAGE_ODI}`, "GET")
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+}
+
+export function getBestBowlingAverageT20List() {
+  return new HttpRequest(`${SERVER_ACTIONS.BEST_BOWLING_AVERAGE_T20}`, "GET")
     .requestWithAuthentication()
     .then(
       (response) => {

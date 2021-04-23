@@ -20,13 +20,32 @@ import AddPlayerStats from "../FunctionalPages/Admin/AddPlayerStats";
 import Stadium from "../FunctionalPages/Stadiums/Stadium";
 import TeamPlayers from "../FunctionalPages/Teams/TeamPlayers";
 import TeamPlayerInfo from "../FunctionalPages/Teams/TeamPlayerInfo";
-import MostRunsTest from "../FunctionalPages/Records/MostRuns/MostRunsTest";
-import MostRunsOdi from "../FunctionalPages/Records/MostRuns/MostRunsOdi";
-import MostRunsT20 from "../FunctionalPages/Records/MostRuns/MostRunsT20";
-import MostSixesTest from "../FunctionalPages/Records/MostSixes/MostSixesTest";
-import MostSixesOdi from "../FunctionalPages/Records/MostSixes/MostSixesOdi";
-import MostSixesT20 from "../FunctionalPages/Records/MostSixes/MostSixesT20";
 import PlayerInfo from "../FunctionalPages/PlayerInfo/PlayerInfo";
+import MostRuns from "../FunctionalPages/Records/BattingRecords/MostRuns";
+import MostSixes from "../FunctionalPages/Records/BattingRecords/MostSixes";
+import MostFours from "../FunctionalPages/Records/BattingRecords/MostFours";
+import MostFifties from "../FunctionalPages/Records/BattingRecords/MostFifties";
+import MostCenturies from "../FunctionalPages/Records/BattingRecords/MostCenturies";
+import MostDoubleHundreds from "../FunctionalPages/Records/BattingRecords/MostDoubleHundreds";
+import HighestScore from "../FunctionalPages/Records/BattingRecords/HighestScore";
+import MostNotOuts from "../FunctionalPages/Records/BattingRecords/MostNotOuts";
+import MostMatches from "../FunctionalPages/Records/BattingRecords/MostMatches";
+import MostBallsFaced from "../FunctionalPages/Records/BattingRecords/MostBallsFaced";
+import MostInningsBatted from "../FunctionalPages/Records/BattingRecords/MostInningsBatted";
+import BestStrikeRate from "../FunctionalPages/Records/BattingRecords/BestStrikeRate";
+import BestAverage from "../FunctionalPages/Records/BattingRecords/BestAverage";
+import MostWickets from "../FunctionalPages/Records/BowlingRecords/MostWickets";
+import BestBBI from "../FunctionalPages/Records/BowlingRecords/BestBBI";
+import BestBBM from "../FunctionalPages/Records/BowlingRecords/BestBBM";
+import BestEconomy from "../FunctionalPages/Records/BowlingRecords/BestEconomy";
+import Most4W from "../FunctionalPages/Records/BowlingRecords/Most4W";
+import Most10W from "../FunctionalPages/Records/BowlingRecords/Most10W";
+import Most5W from "../FunctionalPages/Records/BowlingRecords/Most5W";
+import MostInningsBowled from "../FunctionalPages/Records/BowlingRecords/MostInningsBowled";
+import MostBallsBowled from "../FunctionalPages/Records/BowlingRecords/MostBallsBowled";
+import MostRunsConceded from "../FunctionalPages/Records/BowlingRecords/MostRunsConceded";
+import BestBowlingStrikeRate from "../FunctionalPages/Records/BowlingRecords/BestBowlingStrikeRate";
+import BestBowlingAverage from "../FunctionalPages/Records/BowlingRecords/BestBowlingAverage";
 
 class Layout extends Component {
   constructor(props) {
@@ -54,7 +73,11 @@ class Layout extends Component {
               exact
               component={TeamPlayerInfo}
             />
-            <Route path={PAGE_URLS.VIEW_PLAYER_INFO} exact component={PlayerInfo} />
+            <Route
+              path={PAGE_URLS.VIEW_PLAYER_INFO}
+              exact
+              component={PlayerInfo}
+            />
             <Route
               path={PAGE_URLS.ADD_PLAYER_STATS}
               exact
@@ -83,36 +106,100 @@ class Layout extends Component {
             <Route path={PAGE_URLS.ALL_STADIUMS} exact component={Stadiums} />
             <Route path={PAGE_URLS.VIEW_STADIUM} exact component={Stadium} />
             <Route path={PAGE_URLS.RECORDS} exact component={Records} />
+            <Route path={PAGE_URLS.MOST_RUNS} exact component={MostRuns} />
+            <Route path={PAGE_URLS.MOST_SIXES} exact component={MostSixes} />
+            <Route path={PAGE_URLS.MOST_FOURS} exact component={MostFours} />
             <Route
-              path={PAGE_URLS.MOST_RUNS_TEST}
+              path={PAGE_URLS.MOST_FIFTIES}
               exact
-              component={MostRunsTest}
+              component={MostFifties}
             />
             <Route
-              path={PAGE_URLS.MOST_RUNS_ODI}
+              path={PAGE_URLS.MOST_CENTURIES}
               exact
-              component={MostRunsOdi}
+              component={MostCenturies}
+            />
+            <Route
+              path={PAGE_URLS.MOST_DOUBLE_HUNDREDS}
+              exact
+              component={MostDoubleHundreds}
+            />
+            <Route
+              path={PAGE_URLS.HIGHEST_SCORE}
+              exact
+              component={HighestScore}
+            />
+            <Route
+              path={PAGE_URLS.MOST_NOT_OUTS}
+              exact
+              component={MostNotOuts}
+            />
+            <Route
+              path={PAGE_URLS.MOST_MATCHES}
+              exact
+              component={MostMatches}
+            />
+            <Route
+              path={PAGE_URLS.MOST_BALLS_FACED}
+              exact
+              component={MostBallsFaced}
+            />
+            <Route
+              path={PAGE_URLS.MOST_INNINGS_BATTED}
+              exact
+              component={MostInningsBatted}
+            />
+            <Route
+              path={PAGE_URLS.BEST_STRIKE_RATE}
+              exact
+              component={BestStrikeRate}
+            />
+            <Route
+              path={PAGE_URLS.BEST_AVERAGE}
+              exact
+              component={BestAverage}
+            />
+            <Route
+              path={PAGE_URLS.MOST_WICKETS}
+              exact
+              component={MostWickets}
+            />
+            <Route path={PAGE_URLS.BEST_BBI} exact component={BestBBI} />
+            <Route path={PAGE_URLS.BEST_BBM} exact component={BestBBM} />
+            <Route
+              path={PAGE_URLS.BEST_ECONOMY}
+              exact
+              component={BestEconomy}
+            />
+            <Route path={PAGE_URLS.MOST_4W} exact component={Most4W} />
+            <Route
+              path={PAGE_URLS.MOST_BALLS_BOWLED}
+              exact
+              component={MostBallsBowled}
+            />
+            <Route
+              path={PAGE_URLS.MOST_RUNS_CONCEDED}
+              exact
+              component={MostRunsConceded}
+            />
+            <Route
+              path={PAGE_URLS.BEST_BOWLING_STRIKE_RATE}
+              exact
+              component={BestBowlingStrikeRate}
+            />
+            <Route
+              path={PAGE_URLS.BEST_BOWLING_AVERAGE}
+              exact
+              component={BestBowlingAverage}
             />
             <Route
               path={PAGE_URLS.MOST_RUNS_T20}
               exact
-              component={MostRunsT20}
+              component={MostInningsBowled}
             />
-            <Route
-              path={PAGE_URLS.MOST_SIXES_TEST}
-              exact
-              component={MostSixesTest}
-            />
-            <Route
-              path={PAGE_URLS.MOST_SIXES_ODI}
-              exact
-              component={MostSixesOdi}
-            />
-            <Route
-              path={PAGE_URLS.MOST_SIXES_T20}
-              exact
-              component={MostSixesT20}
-            />
+            <Route path={PAGE_URLS.MOST_5W} exact component={Most5W} />
+            <Route path={PAGE_URLS.MOST_10W} exact component={Most10W} />
+
             <Route path={PAGE_URLS.PAGE_NOT_FOUND} component={PageNotFound} />
           </Switch>
         </main>
