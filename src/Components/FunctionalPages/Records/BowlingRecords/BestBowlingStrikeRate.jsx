@@ -9,38 +9,38 @@ class BestBowlingStrikeRate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostRunsTest: [],
-      mostRunsOdi: [],
-      mostRunsT20: [],
+      bowlingStrikeRateTest: [],
+      bowlingStrikeRateOdi: [],
+      bowlingStrikeRateT20: [],
     };
   }
 
   componentDidMount() {
-    this.getMostRunsTestFromList();
-    this.getMostRunsT20FromList();
-    this.getMostRunsOdiFromList();
+    this.getBowlingStrikeRateTestFromList();
+    this.getBowlingStrikeRateT20FromList();
+    this.getBowlingStrikeRateOdiFromList();
   }
 
-  getMostRunsTestFromList = (type) => {
+  getBowlingStrikeRateTestFromList = (type) => {
     getBestBowlingStrikeRateTestList(type).then((response) => {
       this.setState({
-        mostRunsTest: response,
+        bowlingStrikeRateTest: response,
       });
     });
   };
 
-  getMostRunsOdiFromList = (type) => {
+  getBowlingStrikeRateOdiFromList = (type) => {
     getBestBowlingStrikeRateOdiList(type).then((response) => {
       this.setState({
-        mostRunsOdi: response,
+        bowlingStrikeRateOdi: response,
       });
     });
   };
 
-  getMostRunsT20FromList = (type) => {
+  getBowlingStrikeRateT20FromList = (type) => {
     getBestBowlingStrikeRateT20List(type).then((response) => {
       this.setState({
-        mostRunsT20: response,
+        bowlingStrikeRateT20: response,
       });
     });
   };
@@ -62,12 +62,16 @@ class BestBowlingStrikeRate extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsTest.map((mostRunsInTest) => (
-                  <tr>
-                    <td className="fs-5">{mostRunsInTest.name}</td>
-                    <td className="fs-5">{mostRunsInTest.runs}</td>
-                  </tr>
-                ))}
+                {this.state.bowlingStrikeRateTest.map(
+                  (bowlingStrikeRateInTest) => (
+                    <tr>
+                      <td className="fs-5">{bowlingStrikeRateInTest.name}</td>
+                      <td className="fs-5">
+                        {bowlingStrikeRateInTest.strike_rateB}
+                      </td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
           </div>
@@ -81,12 +85,16 @@ class BestBowlingStrikeRate extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsOdi.map((mostRunsInOdi) => (
-                  <tr>
-                    <td className="fs-5">{mostRunsInOdi.name}</td>
-                    <td className="fs-5">{mostRunsInOdi.runs}</td>
-                  </tr>
-                ))}
+                {this.state.bowlingStrikeRateOdi.map(
+                  (bowlingStrikeRateInOdi) => (
+                    <tr>
+                      <td className="fs-5">{bowlingStrikeRateInOdi.name}</td>
+                      <td className="fs-5">
+                        {bowlingStrikeRateInOdi.strike_rateB}
+                      </td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
           </div>
@@ -100,12 +108,16 @@ class BestBowlingStrikeRate extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsT20.map((mostRunsInT20) => (
-                  <tr>
-                    <td className="fs-5">{mostRunsInT20.name}</td>
-                    <td className="fs-5">{mostRunsInT20.runs}</td>
-                  </tr>
-                ))}
+                {this.state.bowlingStrikeRateT20.map(
+                  (bowlingStrikeRateInT20) => (
+                    <tr>
+                      <td className="fs-5">{bowlingStrikeRateInT20.name}</td>
+                      <td className="fs-5">
+                        {bowlingStrikeRateInT20.strike_rateB}
+                      </td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
           </div>

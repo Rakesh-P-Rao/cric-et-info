@@ -9,38 +9,38 @@ class BestStrikeRate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostRunsTest: [],
-      mostRunsOdi: [],
-      mostRunsT20: [],
+      bestStrikeRateTest: [],
+      bestStrikeRateOdi: [],
+      bestStrikeRateT20: [],
     };
   }
 
   componentDidMount() {
-    this.getMostRunsTestFromList();
-    this.getMostRunsT20FromList();
-    this.getMostRunsOdiFromList();
+    this.getBestStrikeRateTestFromList();
+    this.getBestStrikeRateT20FromList();
+    this.getBestStrikeRateOdiFromList();
   }
 
-  getMostRunsTestFromList = (type) => {
+  getBestStrikeRateTestFromList = (type) => {
     getBestStrikeRateTestList(type).then((response) => {
       this.setState({
-        mostRunsTest: response,
+        bestStrikeRateTest: response,
       });
     });
   };
 
-  getMostRunsOdiFromList = (type) => {
+  getBestStrikeRateOdiFromList = (type) => {
     getBestStrikeRateOdiList(type).then((response) => {
       this.setState({
-        mostRunsOdi: response,
+        bestStrikeRateOdi: response,
       });
     });
   };
 
-  getMostRunsT20FromList = (type) => {
+  getBestStrikeRateT20FromList = (type) => {
     getBestStrikeRateT20List(type).then((response) => {
       this.setState({
-        mostRunsT20: response,
+        bestStrikeRateT20: response,
       });
     });
   };
@@ -62,10 +62,10 @@ class BestStrikeRate extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsTest.map((mostRunsInTest) => (
+                {this.state.bestStrikeRateTest.map((bestStrikeRateInTest) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInTest.name}</td>
-                    <td className="fs-5">{mostRunsInTest.strike_rate}</td>
+                    <td className="fs-5">{bestStrikeRateInTest.name}</td>
+                    <td className="fs-5">{bestStrikeRateInTest.strike_rate}</td>
                   </tr>
                 ))}
               </tbody>
@@ -81,10 +81,10 @@ class BestStrikeRate extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsOdi.map((mostRunsInOdi) => (
+                {this.state.bestStrikeRateOdi.map((bestStrikeRateInOdi) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInOdi.name}</td>
-                    <td className="fs-5">{mostRunsInOdi.strike_rate}</td>
+                    <td className="fs-5">{bestStrikeRateInOdi.name}</td>
+                    <td className="fs-5">{bestStrikeRateInOdi.strike_rate}</td>
                   </tr>
                 ))}
               </tbody>
@@ -100,10 +100,10 @@ class BestStrikeRate extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsT20.map((mostRunsInT20) => (
+                {this.state.bestStrikeRateT20.map((bestStrikeRateInT20) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInT20.name}</td>
-                    <td className="fs-5">{mostRunsInT20.strike_rate}</td>
+                    <td className="fs-5">{bestStrikeRateInT20.name}</td>
+                    <td className="fs-5">{bestStrikeRateInT20.strike_rate}</td>
                   </tr>
                 ))}
               </tbody>

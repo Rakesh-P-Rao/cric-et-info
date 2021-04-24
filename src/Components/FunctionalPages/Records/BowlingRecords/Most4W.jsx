@@ -9,38 +9,38 @@ class Most4W extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostRunsTest: [],
-      mostRunsOdi: [],
-      mostRunsT20: [],
+      most4WTest: [],
+      most4WOdi: [],
+      most4WT20: [],
     };
   }
 
   componentDidMount() {
-    this.getMostRunsTestFromList();
-    this.getMostRunsT20FromList();
-    this.getMostRunsOdiFromList();
+    this.getMost4WTestFromList();
+    this.getMost4WT20FromList();
+    this.getMost4WOdiFromList();
   }
 
-  getMostRunsTestFromList = (type) => {
+  getMost4WTestFromList = (type) => {
     getMost4WTestList(type).then((response) => {
       this.setState({
-        mostRunsTest: response,
+        most4WTest: response,
       });
     });
   };
 
-  getMostRunsOdiFromList = (type) => {
+  getMost4WOdiFromList = (type) => {
     getMost4WOdiList(type).then((response) => {
       this.setState({
-        mostRunsOdi: response,
+        most4WOdi: response,
       });
     });
   };
 
-  getMostRunsT20FromList = (type) => {
+  getMost4WT20FromList = (type) => {
     getMost4WT20List(type).then((response) => {
       this.setState({
-        mostRunsT20: response,
+        most4WT20: response,
       });
     });
   };
@@ -62,10 +62,10 @@ class Most4W extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsTest.map((mostRunsInTest) => (
+                {this.state.most4WTest.map((most4WInTest) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInTest.name}</td>
-                    <td className="fs-5">{mostRunsInTest.runs}</td>
+                    <td className="fs-5">{most4WInTest.name}</td>
+                    <td className="fs-5">{most4WInTest.four_fers}</td>
                   </tr>
                 ))}
               </tbody>
@@ -81,10 +81,10 @@ class Most4W extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsOdi.map((mostRunsInOdi) => (
+                {this.state.most4WOdi.map((most4WInOdi) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInOdi.name}</td>
-                    <td className="fs-5">{mostRunsInOdi.runs}</td>
+                    <td className="fs-5">{most4WInOdi.name}</td>
+                    <td className="fs-5">{most4WInOdi.four_fers}</td>
                   </tr>
                 ))}
               </tbody>
@@ -100,10 +100,10 @@ class Most4W extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsT20.map((mostRunsInT20) => (
+                {this.state.most4WT20.map((most4WInT20) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInT20.name}</td>
-                    <td className="fs-5">{mostRunsInT20.runs}</td>
+                    <td className="fs-5">{most4WInT20.name}</td>
+                    <td className="fs-5">{most4WInT20.four_fers}</td>
                   </tr>
                 ))}
               </tbody>

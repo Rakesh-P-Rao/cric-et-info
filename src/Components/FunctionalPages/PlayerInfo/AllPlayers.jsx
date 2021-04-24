@@ -25,7 +25,7 @@ class AllPlayers extends Component {
   render() {
     return (
       <div className="container">
-        <h1>AllPlayers</h1>
+        <h1 className="bg-dark text-light text-center py-lg-4 ">All Players</h1>
         <div className="row row-cols-1 row-cols-md-3 g-4">
           {this.state.allPlayersList.map((pList) => (
             <div className="col">

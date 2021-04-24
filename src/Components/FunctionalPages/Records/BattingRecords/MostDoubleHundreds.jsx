@@ -9,38 +9,38 @@ class MostDoubleHundreds extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostRunsTest: [],
-      mostRunsOdi: [],
-      mostRunsT20: [],
+      mostDoubleHundredsTest: [],
+      mostDoubleHundredsOdi: [],
+      mostDoubleHundredsT20: [],
     };
   }
 
   componentDidMount() {
-    this.getMostRunsTestFromList();
-    this.getMostRunsT20FromList();
-    this.getMostRunsOdiFromList();
+    this.getMostDoubleHundredsTestFromList();
+    this.getMostDoubleHundredsT20FromList();
+    this.getMostDoubleHundredsOdiFromList();
   }
 
-  getMostRunsTestFromList = (type) => {
+  getMostDoubleHundredsTestFromList = (type) => {
     getMostDoubleHundredsTestList(type).then((response) => {
       this.setState({
-        mostRunsTest: response,
+        mostDoubleHundredsTest: response,
       });
     });
   };
 
-  getMostRunsOdiFromList = (type) => {
+  getMostDoubleHundredsOdiFromList = (type) => {
     getMostDoubleHundredsOdiList(type).then((response) => {
       this.setState({
-        mostRunsOdi: response,
+        mostDoubleHundredsOdi: response,
       });
     });
   };
 
-  getMostRunsT20FromList = (type) => {
+  getMostDoubleHundredsT20FromList = (type) => {
     getMostDoubleHundredsT20List(type).then((response) => {
       this.setState({
-        mostRunsT20: response,
+        mostDoubleHundredsT20: response,
       });
     });
   };
@@ -62,10 +62,10 @@ class MostDoubleHundreds extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsTest.map((mostRunsInTest) => (
+                {this.state.mostDoubleHundredsTest.map((mostDoubleHundredsInTest) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInTest.name}</td>
-                    <td className="fs-5">{mostRunsInTest.double_hundreds}</td>
+                    <td className="fs-5">{mostDoubleHundredsInTest.name}</td>
+                    <td className="fs-5">{mostDoubleHundredsInTest.double_hundreds}</td>
                   </tr>
                 ))}
               </tbody>
@@ -81,10 +81,10 @@ class MostDoubleHundreds extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsOdi.map((mostRunsInOdi) => (
+                {this.state.mostDoubleHundredsOdi.map((mostDoubleHundredsInOdi) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInOdi.name}</td>
-                    <td className="fs-5">{mostRunsInOdi.double_hundreds}</td>
+                    <td className="fs-5">{mostDoubleHundredsInOdi.name}</td>
+                    <td className="fs-5">{mostDoubleHundredsInOdi.double_hundreds}</td>
                   </tr>
                 ))}
               </tbody>
@@ -100,10 +100,10 @@ class MostDoubleHundreds extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsT20.map((mostRunsInT20) => (
+                {this.state.mostDoubleHundredsT20.map((mostDoubleHundredsInT20) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInT20.name}</td>
-                    <td className="fs-5">{mostRunsInT20.double_hundreds}</td>
+                    <td className="fs-5">{mostDoubleHundredsInT20.name}</td>
+                    <td className="fs-5">{mostDoubleHundredsInT20.double_hundreds}</td>
                   </tr>
                 ))}
               </tbody>

@@ -9,38 +9,38 @@ class MostBallsFaced extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostRunsTest: [],
-      mostRunsOdi: [],
-      mostRunsT20: [],
+      mostBallsFacedTest: [],
+      mostBallsFacedOdi: [],
+      mostBallsFacedT20: [],
     };
   }
 
   componentDidMount() {
-    this.getMostRunsTestFromList();
-    this.getMostRunsT20FromList();
-    this.getMostRunsOdiFromList();
+    this.getBallsfacedTestFromList();
+    this.getBallsfacedT20FromList();
+    this.getBallsfacedOdiFromList();
   }
 
-  getMostRunsTestFromList = (type) => {
+  getBallsfacedTestFromList = (type) => {
     getMostBallsFacedTestList(type).then((response) => {
       this.setState({
-        mostRunsTest: response,
+        mostBallsFacedTest: response,
       });
     });
   };
 
-  getMostRunsOdiFromList = (type) => {
+  getBallsfacedOdiFromList = (type) => {
     getMostBallsFacedOdiList(type).then((response) => {
       this.setState({
-        mostRunsOdi: response,
+        mostBallsFacedOdi: response,
       });
     });
   };
 
-  getMostRunsT20FromList = (type) => {
+  getBallsfacedT20FromList = (type) => {
     getMostBallsFacedT20List(type).then((response) => {
       this.setState({
-        mostRunsT20: response,
+        mostBallsFacedT20: response,
       });
     });
   };
@@ -62,10 +62,10 @@ class MostBallsFaced extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsTest.map((mostRunsInTest) => (
+                {this.state.mostBallsFacedTest.map((mostBallsFacedInTest) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInTest.name}</td>
-                    <td className="fs-5">{mostRunsInTest.balls_faced}</td>
+                    <td className="fs-5">{mostBallsFacedInTest.name}</td>
+                    <td className="fs-5">{mostBallsFacedInTest.balls_faced}</td>
                   </tr>
                 ))}
               </tbody>
@@ -81,10 +81,10 @@ class MostBallsFaced extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsOdi.map((mostRunsInOdi) => (
+                {this.state.mostBallsFacedOdi.map((mostBallsFacedInOdi) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInOdi.name}</td>
-                    <td className="fs-5">{mostRunsInOdi.balls_faced}</td>
+                    <td className="fs-5">{mostBallsFacedInOdi.name}</td>
+                    <td className="fs-5">{mostBallsFacedInOdi.balls_faced}</td>
                   </tr>
                 ))}
               </tbody>
@@ -100,10 +100,10 @@ class MostBallsFaced extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsT20.map((mostRunsInT20) => (
+                {this.state.mostBallsFacedT20.map((mostBallsFacedInT20) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInT20.name}</td>
-                    <td className="fs-5">{mostRunsInT20.balls_faced}</td>
+                    <td className="fs-5">{mostBallsFacedInT20.name}</td>
+                    <td className="fs-5">{mostBallsFacedInT20.balls_faced}</td>
                   </tr>
                 ))}
               </tbody>

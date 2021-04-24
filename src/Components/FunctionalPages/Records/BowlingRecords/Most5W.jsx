@@ -9,38 +9,38 @@ class Most5W extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostRunsTest: [],
-      mostRunsOdi: [],
-      mostRunsT20: [],
+      most5WTest: [],
+      most5WOdi: [],
+      most5WT20: [],
     };
   }
 
   componentDidMount() {
-    this.getMostRunsTestFromList();
-    this.getMostRunsT20FromList();
-    this.getMostRunsOdiFromList();
+    this.getMost5WTestFromList();
+    this.getMost5WT20FromList();
+    this.getMost5WOdiFromList();
   }
 
-  getMostRunsTestFromList = (type) => {
+  getMost5WTestFromList = (type) => {
     getMost5WTestList(type).then((response) => {
       this.setState({
-        mostRunsTest: response,
+        most5WTest: response,
       });
     });
   };
 
-  getMostRunsOdiFromList = (type) => {
+  getMost5WOdiFromList = (type) => {
     getMost5WOdiList(type).then((response) => {
       this.setState({
-        mostRunsOdi: response,
+        most5WOdi: response,
       });
     });
   };
 
-  getMostRunsT20FromList = (type) => {
+  getMost5WT20FromList = (type) => {
     getMost5WT20List(type).then((response) => {
       this.setState({
-        mostRunsT20: response,
+        most5WT20: response,
       });
     });
   };
@@ -62,10 +62,10 @@ class Most5W extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsTest.map((mostRunsInTest) => (
+                {this.state.most5WTest.map((most5WInTest) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInTest.name}</td>
-                    <td className="fs-5">{mostRunsInTest.runs}</td>
+                    <td className="fs-5">{most5WInTest.name}</td>
+                    <td className="fs-5">{most5WInTest.fifers}</td>
                   </tr>
                 ))}
               </tbody>
@@ -81,10 +81,10 @@ class Most5W extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsOdi.map((mostRunsInOdi) => (
+                {this.state.most5WOdi.map((most5WInOdi) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInOdi.name}</td>
-                    <td className="fs-5">{mostRunsInOdi.runs}</td>
+                    <td className="fs-5">{most5WInOdi.name}</td>
+                    <td className="fs-5">{most5WInOdi.fifers}</td>
                   </tr>
                 ))}
               </tbody>
@@ -100,10 +100,10 @@ class Most5W extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsT20.map((mostRunsInT20) => (
+                {this.state.most5WT20.map((most5WInT20) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInT20.name}</td>
-                    <td className="fs-5">{mostRunsInT20.runs}</td>
+                    <td className="fs-5">{most5WInT20.name}</td>
+                    <td className="fs-5">{most5WInT20.fifers}</td>
                   </tr>
                 ))}
               </tbody>

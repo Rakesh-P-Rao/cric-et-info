@@ -9,38 +9,38 @@ class MostNotOuts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostRunsTest: [],
-      mostRunsOdi: [],
-      mostRunsT20: [],
+      mostNotOutsTest: [],
+      mostNotOutsOdi: [],
+      mostNotOutsT20: [],
     };
   }
 
   componentDidMount() {
-    this.getMostRunsTestFromList();
-    this.getMostRunsT20FromList();
-    this.getMostRunsOdiFromList();
+    this.getMostNotOutsTestFromList();
+    this.getMostNotOutsT20FromList();
+    this.getMostNotOutsOdiFromList();
   }
 
-  getMostRunsTestFromList = (type) => {
+  getMostNotOutsTestFromList = (type) => {
     getMostNotOutsTestList(type).then((response) => {
       this.setState({
-        mostRunsTest: response,
+        mostNotOutsTest: response,
       });
     });
   };
 
-  getMostRunsOdiFromList = (type) => {
+  getMostNotOutsOdiFromList = (type) => {
     getMostNotOutsOdiList(type).then((response) => {
       this.setState({
-        mostRunsOdi: response,
+        mostNotOutsOdi: response,
       });
     });
   };
 
-  getMostRunsT20FromList = (type) => {
+  getMostNotOutsT20FromList = (type) => {
     getMostNotOutsT20List(type).then((response) => {
       this.setState({
-        mostRunsT20: response,
+        mostNotOutsT20: response,
       });
     });
   };
@@ -62,10 +62,10 @@ class MostNotOuts extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsTest.map((mostRunsInTest) => (
+                {this.state.mostNotOutsTest.map((mostNotOutsInTest) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInTest.name}</td>
-                    <td className="fs-5">{mostRunsInTest.not_outs}</td>
+                    <td className="fs-5">{mostNotOutsInTest.name}</td>
+                    <td className="fs-5">{mostNotOutsInTest.no_of_notOuts}</td>
                   </tr>
                 ))}
               </tbody>
@@ -81,10 +81,10 @@ class MostNotOuts extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsOdi.map((mostRunsInOdi) => (
+                {this.state.mostNotOutsOdi.map((mostNotOutsInOdi) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInOdi.name}</td>
-                    <td className="fs-5">{mostRunsInOdi.not_outs}</td>
+                    <td className="fs-5">{mostNotOutsInOdi.name}</td>
+                    <td className="fs-5">{mostNotOutsInOdi.no_of_notOuts}</td>
                   </tr>
                 ))}
               </tbody>
@@ -100,10 +100,10 @@ class MostNotOuts extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsT20.map((mostRunsInT20) => (
+                {this.state.mostNotOutsT20.map((mostNotOutsInT20) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInT20.name}</td>
-                    <td className="fs-5">{mostRunsInT20.not_outs}</td>
+                    <td className="fs-5">{mostNotOutsInT20.name}</td>
+                    <td className="fs-5">{mostNotOutsInT20.no_of_notOuts}</td>
                   </tr>
                 ))}
               </tbody>

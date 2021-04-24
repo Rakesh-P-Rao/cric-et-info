@@ -53,7 +53,7 @@ class Records extends Component {
             <Link to={PAGE_URLS.BEST_AVERAGE}>
               <Record record="Best Average" />
             </Link>
-            <Link to={PAGE_URLS.MOST_INNIGS_BATTED}>
+            <Link to={PAGE_URLS.MOST_INNINGS_BATTED}>
               <Record record="Most Innings Batted" />
             </Link>
           </div>
@@ -80,10 +80,10 @@ class Records extends Component {
             <Link to={PAGE_URLS.MOST_5W}>
               <Record record="Most 5W" />
             </Link>
-            <Link to={PAGE_URLS.HIGHEST_10W}>
+            <Link to={PAGE_URLS.MOST_10W}>
               <Record record="Most 10W" />
             </Link>
-            <Link to={PAGE_URLS.MOST_INNIGS_BOWLED}>
+            <Link to={PAGE_URLS.MOST_INNINGS_BOWLED}>
               <Record record="Most Innings Bowled" />
             </Link>
             <Link to={PAGE_URLS.MOST_BALLS_BOWLED}>

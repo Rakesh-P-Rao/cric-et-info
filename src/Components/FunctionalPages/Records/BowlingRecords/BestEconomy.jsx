@@ -9,43 +9,45 @@ class BestEconomy extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostRunsTest: [],
-      mostRunsOdi: [],
-      mostRunsT20: [],
+      mostEconomyTest: [],
+      mostEconomyOdi: [],
+      mostEconomyT20: [],
     };
   }
 
   componentDidMount() {
-    this.getMostRunsTestFromList();
-    this.getMostRunsT20FromList();
-    this.getMostRunsOdiFromList();
+    this.getMostEconomyTestFromList();
+    this.getMostEconomyT20FromList();
+    this.getMostEconomyOdiFromList();
   }
 
-  getMostRunsTestFromList = (type) => {
+  getMostEconomyTestFromList = (type) => {
     getBestEconomyTestList(type).then((response) => {
       this.setState({
-        mostRunsTest: response,
+        mostEconomyTest: response,
       });
     });
   };
 
-  getMostRunsOdiFromList = (type) => {
+  getMostEconomyOdiFromList = (type) => {
     getBestEconomyOdiList(type).then((response) => {
       this.setState({
-        mostRunsOdi: response,
+        mostEconomyOdi: response,
       });
     });
   };
 
-  getMostRunsT20FromList = (type) => {
+  getMostEconomyT20FromList = (type) => {
     getBestEconomyT20List(type).then((response) => {
       this.setState({
-        mostRunsT20: response,
+        mostEconomyT20: response,
       });
     });
   };
 
   render() {
+    console.log(this.state.mostEconomyT20)
+    console.log(this.state.mostEconomyOdi);
     return (
       <div className="container">
         <h1 className="text-center bg-dark text-warning py-lg-3 rounded-1">
@@ -62,10 +64,10 @@ class BestEconomy extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsTest.map((mostRunsInTest) => (
+                {this.state.mostEconomyTest.map((mostEconomyInTest) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInTest.name}</td>
-                    <td className="fs-5">{mostRunsInTest.runs}</td>
+                    <td className="fs-5">{mostEconomyInTest.name}</td>
+                    <td className="fs-5">{mostEconomyInTest.economy}</td>
                   </tr>
                 ))}
               </tbody>
@@ -81,10 +83,10 @@ class BestEconomy extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsOdi.map((mostRunsInOdi) => (
+                {this.state.mostEconomyOdi.map((mostEconomyInOdi) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInOdi.name}</td>
-                    <td className="fs-5">{mostRunsInOdi.runs}</td>
+                    <td className="fs-5">{mostEconomyInOdi.name}</td>
+                    <td className="fs-5">{mostEconomyInOdi.economy}</td>
                   </tr>
                 ))}
               </tbody>
@@ -100,10 +102,10 @@ class BestEconomy extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsT20.map((mostRunsInT20) => (
+                {this.state.mostEconomyT20.map((mostEconomyInT20) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInT20.name}</td>
-                    <td className="fs-5">{mostRunsInT20.runs}</td>
+                    <td className="fs-5">{mostEconomyInT20.name}</td>
+                    <td className="fs-5">{mostEconomyInT20.economy}</td>
                   </tr>
                 ))}
               </tbody>

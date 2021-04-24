@@ -16,14 +16,15 @@ app.use(express.json());
 ////STADIUM////
 const team = require("./codes/Teams/Team/Team");
 const teamPlayers = require("./codes/Teams/TeamPlayers/teamPlayers");
+const stadiums = require("./codes/Stadiums/stadiums");
 app.use(
   teamPlayers.getTeamPlayers,
   team.addTeam,
-  team.allTeams
+  team.allTeams,
+  stadiums.addStadium,
+  stadiums.allStadiums,
+  stadiums.getStadium,
 );
-
-const stadiums = require("./codes/Stadiums/stadiums");
-app.use(stadiums.addStadium, stadiums.allStadiums, stadiums.getStadium);
 
 ////PLAYER_INFO////////ROLE, BOWLINGSTYLE, BATTINGSTYLE////////PLAYER_STATS////
 const playerInfo = require("./codes/PlayerInfo/playerInfo");
@@ -40,14 +41,13 @@ app.use(
 );
 
 ////RECORDS////
-////BATTING_RECORDS////
+////BATTING_RECORDS, BOWLING_RECORDS////
 const battingRecords = require("./codes/Records/BattingRecords/battingRecords");
+const bowlingRecords = require("./codes/Records/BowlingRecords/bowlingRecords");
 app.use(
   battingRecords.mostRuns.mostRunsTest,
+  bowlingRecords.mostWickets.mostWicketsTest,
 );
-////BOWLING_RECORDS////
-const bowlingRecords = require("./codes/Records/BowlingRecords/bowlingRecords");
-
 
 app.listen(3001, () => {
   console.log("########_Cric@info IS Running!!!!!!!!!");

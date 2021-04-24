@@ -2,45 +2,45 @@ import React, { Component } from "react";
 import {
   getMost10WTestList,
   getMost10WOdiList,
-  getMostRunsOdiList,
+  getMost10WT20List,
 } from "../../functionalApiActions";
 
 class Most10W extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostRunsTest: [],
-      mostRunsOdi: [],
-      mostRunsT20: [],
+      most10WTest: [],
+      most10WOdi: [],
+      most10WT20: [],
     };
   }
 
   componentDidMount() {
-    this.getMostRunsTestFromList();
-    this.getMostRunsT20FromList();
-    this.getMostRunsOdiFromList();
+    this.getMost10WTestFromList();
+    this.getMost10WT20FromList();
+    this.getMost10WOdiFromList();
   }
 
-  getMostRunsTestFromList = (type) => {
+  getMost10WTestFromList = (type) => {
     getMost10WTestList(type).then((response) => {
       this.setState({
-        mostRunsTest: response,
+        most10WTest: response,
       });
     });
   };
 
-  getMostRunsOdiFromList = (type) => {
-    getMostRunsOdiList(type).then((response) => {
-      this.setState({
-        mostRunsOdi: response,
-      });
-    });
-  };
-
-  getMostRunsT20FromList = (type) => {
+  getMost10WOdiFromList = (type) => {
     getMost10WOdiList(type).then((response) => {
       this.setState({
-        mostRunsT20: response,
+        most10WOdi: response,
+      });
+    });
+  };
+
+  getMost10WT20FromList = (type) => {
+    getMost10WT20List(type).then((response) => {
+      this.setState({
+        most10WT20: response,
       });
     });
   };
@@ -62,10 +62,10 @@ class Most10W extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsTest.map((mostRunsInTest) => (
+                {this.state.most10WTest.map((most10WInTest) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInTest.name}</td>
-                    <td className="fs-5">{mostRunsInTest.runs}</td>
+                    <td className="fs-5">{most10WInTest.name}</td>
+                    <td className="fs-5">{most10WInTest.ten_wickets}</td>
                   </tr>
                 ))}
               </tbody>
@@ -81,10 +81,10 @@ class Most10W extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsOdi.map((mostRunsInOdi) => (
+                {this.state.most10WOdi.map((most10WInOdi) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInOdi.name}</td>
-                    <td className="fs-5">{mostRunsInOdi.runs}</td>
+                    <td className="fs-5">{most10WInOdi.name}</td>
+                    <td className="fs-5">{most10WInOdi.ten_wickets}</td>
                   </tr>
                 ))}
               </tbody>
@@ -100,10 +100,10 @@ class Most10W extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsT20.map((mostRunsInT20) => (
+                {this.state.most10WT20.map((most10WInT20) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInT20.name}</td>
-                    <td className="fs-5">{mostRunsInT20.runs}</td>
+                    <td className="fs-5">{most10WInT20.name}</td>
+                    <td className="fs-5">{most10WInT20.ten_wickets}</td>
                   </tr>
                 ))}
               </tbody>

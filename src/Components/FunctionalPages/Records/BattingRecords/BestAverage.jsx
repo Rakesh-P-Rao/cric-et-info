@@ -16,12 +16,12 @@ class BestAverage extends Component {
   }
 
   componentDidMount() {
-    this.getMostRunsTestFromList();
-    this.getMostRunsT20FromList();
-    this.getMostRunsOdiFromList();
+    this.getBestAverageTestFromList();
+    this.getBestAverageT20FromList();
+    this.getBestAverageOdiFromList();
   }
 
-  getMostRunsTestFromList = (type) => {
+  getBestAverageTestFromList = (type) => {
     getBestAverageTestList(type).then((response) => {
       this.setState({
         bestAverageTest: response,
@@ -29,7 +29,7 @@ class BestAverage extends Component {
     });
   };
 
-  getMostRunsOdiFromList = (type) => {
+  getBestAverageOdiFromList = (type) => {
     getBestAverageOdiList(type).then((response) => {
       this.setState({
         bestAverageOdi: response,
@@ -37,7 +37,7 @@ class BestAverage extends Component {
     });
   };
 
-  getMostRunsT20FromList = (type) => {
+  getBestAverageT20FromList = (type) => {
     getBestAverageT20List(type).then((response) => {
       this.setState({
         bestAverageT20: response,
@@ -62,10 +62,10 @@ class BestAverage extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.bestAverageTest.map((mostRunsInTest) => (
+                {this.state.bestAverageTest.map((bestAverageInTest) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInTest.name}</td>
-                    <td className="fs-5">{mostRunsInTest.average}</td>
+                    <td className="fs-5">{bestAverageInTest.name}</td>
+                    <td className="fs-5">{bestAverageInTest.average}</td>
                   </tr>
                 ))}
               </tbody>
@@ -81,10 +81,10 @@ class BestAverage extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.bestAverageOdi.map((mostRunsInOdi) => (
+                {this.state.bestAverageOdi.map((bestAverageInOdi) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInOdi.name}</td>
-                    <td className="fs-5">{mostRunsInOdi.average}</td>
+                    <td className="fs-5">{bestAverageInOdi.name}</td>
+                    <td className="fs-5">{bestAverageInOdi.average}</td>
                   </tr>
                 ))}
               </tbody>
@@ -100,10 +100,10 @@ class BestAverage extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.bestAverageT20.map((mostRunsInT20) => (
+                {this.state.bestAverageT20.map((bestAverageInT20) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInT20.name}</td>
-                    <td className="fs-5">{mostRunsInT20.average}</td>
+                    <td className="fs-5">{bestAverageInT20.name}</td>
+                    <td className="fs-5">{bestAverageInT20.average}</td>
                   </tr>
                 ))}
               </tbody>

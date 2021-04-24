@@ -9,38 +9,38 @@ class BestBowlingAverage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostRunsTest: [],
-      mostRunsOdi: [],
-      mostRunsT20: [],
+      bestBowlingAverageTest: [],
+      bestBowlingAverageOdi: [],
+      bestBowlingAverageT20: [],
     };
   }
 
   componentDidMount() {
-    this.getMostRunsTestFromList();
-    this.getMostRunsT20FromList();
-    this.getMostRunsOdiFromList();
+    this.getBestBowlingAverageTestFromList();
+    this.getBestBowlingAverageT20FromList();
+    this.getBestBowlingAverageOdiFromList();
   }
 
-  getMostRunsTestFromList = (type) => {
+  getBestBowlingAverageTestFromList = (type) => {
     getBestBowlingAverageTestList(type).then((response) => {
       this.setState({
-        mostRunsTest: response,
+        bestBowlingAverageTest: response,
       });
     });
   };
 
-  getMostRunsOdiFromList = (type) => {
+  getBestBowlingAverageOdiFromList = (type) => {
     getBestBowlingAverageOdiList(type).then((response) => {
       this.setState({
-        mostRunsOdi: response,
+        bestBowlingAverageOdi: response,
       });
     });
   };
 
-  getMostRunsT20FromList = (type) => {
+  getBestBowlingAverageT20FromList = (type) => {
     getBestBowlingAverageT20List(type).then((response) => {
       this.setState({
-        mostRunsT20: response,
+        bestBowlingAverageT20: response,
       });
     });
   };
@@ -62,12 +62,16 @@ class BestBowlingAverage extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsTest.map((mostRunsInTest) => (
-                  <tr>
-                    <td className="fs-5">{mostRunsInTest.name}</td>
-                    <td className="fs-5">{mostRunsInTest.runs}</td>
-                  </tr>
-                ))}
+                {this.state.bestBowlingAverageTest.map(
+                  (bestBowlingAverageInTest) => (
+                    <tr>
+                      <td className="fs-5">{bestBowlingAverageInTest.name}</td>
+                      <td className="fs-5">
+                        {bestBowlingAverageInTest.averageB}
+                      </td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
           </div>
@@ -81,12 +85,16 @@ class BestBowlingAverage extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsOdi.map((mostRunsInOdi) => (
-                  <tr>
-                    <td className="fs-5">{mostRunsInOdi.name}</td>
-                    <td className="fs-5">{mostRunsInOdi.runs}</td>
-                  </tr>
-                ))}
+                {this.state.bestBowlingAverageOdi.map(
+                  (bestBowlingAverageInOdi) => (
+                    <tr>
+                      <td className="fs-5">{bestBowlingAverageInOdi.name}</td>
+                      <td className="fs-5">
+                        {bestBowlingAverageInOdi.averageB}
+                      </td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
           </div>
@@ -100,12 +108,16 @@ class BestBowlingAverage extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsT20.map((mostRunsInT20) => (
-                  <tr>
-                    <td className="fs-5">{mostRunsInT20.name}</td>
-                    <td className="fs-5">{mostRunsInT20.runs}</td>
-                  </tr>
-                ))}
+                {this.state.bestBowlingAverageT20.map(
+                  (bestBowlingAverageInT20) => (
+                    <tr>
+                      <td className="fs-5">{bestBowlingAverageInT20.name}</td>
+                      <td className="fs-5">
+                        {bestBowlingAverageInT20.averageB}
+                      </td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
           </div>

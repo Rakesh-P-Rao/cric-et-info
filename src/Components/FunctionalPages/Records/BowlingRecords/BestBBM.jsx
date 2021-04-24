@@ -9,38 +9,38 @@ class BestBBM extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mostRunsTest: [],
-      mostRunsOdi: [],
-      mostRunsT20: [],
+      bestBBMInTest: [],
+      bestBBMInOdi: [],
+      bestBBMInT20: [],
     };
   }
 
   componentDidMount() {
-    this.getMostRunsTestFromList();
-    this.getMostRunsT20FromList();
-    this.getMostRunsOdiFromList();
+    this.getBestBBMTestFromList();
+    this.getBestBBMT20FromList();
+    this.getBestBBMOdiFromList();
   }
 
-  getMostRunsTestFromList = (type) => {
+  getBestBBMTestFromList = (type) => {
     getBestBBMTestList(type).then((response) => {
       this.setState({
-        mostRunsTest: response,
+        bestBBMInTest: response,
       });
     });
   };
 
-  getMostRunsOdiFromList = (type) => {
+  getBestBBMOdiFromList = (type) => {
     getBestBBMOdiList(type).then((response) => {
       this.setState({
-        mostRunsOdi: response,
+        bestBBMInOdi: response,
       });
     });
   };
 
-  getMostRunsT20FromList = (type) => {
+  getBestBBMT20FromList = (type) => {
     getBestBBMT20List(type).then((response) => {
       this.setState({
-        mostRunsT20: response,
+        bestBBMInT20: response,
       });
     });
   };
@@ -62,10 +62,10 @@ class BestBBM extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsTest.map((mostRunsInTest) => (
+                {this.state.bestBBMInTest.map((bestBBMInTest) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInTest.name}</td>
-                    <td className="fs-5">{mostRunsInTest.runs}</td>
+                    <td className="fs-5">{bestBBMInTest.name}</td>
+                    <td className="fs-5">{bestBBMInTest.bBBM}</td>
                   </tr>
                 ))}
               </tbody>
@@ -81,10 +81,10 @@ class BestBBM extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsOdi.map((mostRunsInOdi) => (
+                {this.state.bestBBMInOdi.map((bestBBMInOdi) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInOdi.name}</td>
-                    <td className="fs-5">{mostRunsInOdi.runs}</td>
+                    <td className="fs-5">{bestBBMInOdi.name}</td>
+                    <td className="fs-5">{bestBBMInOdi.bBBM}</td>
                   </tr>
                 ))}
               </tbody>
@@ -100,10 +100,10 @@ class BestBBM extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.mostRunsT20.map((mostRunsInT20) => (
+                {this.state.bestBBMInT20.map((bestBBMInT20) => (
                   <tr>
-                    <td className="fs-5">{mostRunsInT20.name}</td>
-                    <td className="fs-5">{mostRunsInT20.runs}</td>
+                    <td className="fs-5">{bestBBMInT20.name}</td>
+                    <td className="fs-5">{bestBBMInT20.bBBM}</td>
                   </tr>
                 ))}
               </tbody>

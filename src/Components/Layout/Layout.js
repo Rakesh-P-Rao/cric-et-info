@@ -193,7 +193,7 @@ class Layout extends Component {
               component={BestBowlingAverage}
             />
             <Route
-              path={PAGE_URLS.MOST_RUNS_T20}
+              path={PAGE_URLS.MOST_INNINGS_BOWLED}
               exact
               component={MostInningsBowled}
             />
