@@ -10,6 +10,7 @@ class TeamPlayerInfo extends Component {
     this.state = {
       teamPlayerInfo: [],
       teamPlayerclicked: this.props.match.params,
+      fullName:"loading",
     };
   }
 
@@ -26,9 +27,15 @@ class TeamPlayerInfo extends Component {
   };
 
   render() {
+    console.log(
+      this.state.teamPlayerInfo[0],
+      this.state.teamPlayerclicked.playerId
+    );
+    if (this.state.teamPlayerclicked.playerId === this.state.teamPlayerInfo.playerId) {
+      this.setState.fullName = this.state.teamPlayerInfo.fullName;
+    }
     return (
       <div className="container">
-        {this.state.teamPlayerInfo.map((teamPlayerInfo) => (
           <>
             <div className="playerInfo">
               <div className="card mb-3" style={{ maxWidth: "1200px" }}>
@@ -38,21 +45,18 @@ class TeamPlayerInfo extends Component {
                     style={{ height: "270px" }}
                   >
                     <div className="col-md-4 rounded-2">
-                      <img
-                        src={teamPlayerInfo.image}
-                        alt="player display pic"
-                      />
+                      <img src={this.props.image} alt="player display pic" />
                     </div>
                     <div className="col-md-8 pt-lg-5 pb-0">
                       <div className="card-body pt-lg-5 pb-0">
                         <h1 className="card-title pt-lg-5 pb-0 ">
-                          {teamPlayerInfo.name}
+                          {this.props.name}
                         </h1>
                         <p className="card-text">
                           <small className=" text-dark fw-bold fs-6">
-                            {teamPlayerInfo.team}
+                            {this.props.team}
                           </small>
-                          <div>
+                          {/* <div>
                             <Link
                               className="btn btn-danger fs-4"
                               to={PAGE_URLS.ADD_PLAYER_STATS.replace(
@@ -62,7 +66,7 @@ class TeamPlayerInfo extends Component {
                             >
                               Add Player stats
                             </Link>
-                          </div>
+                          </div> */}
                         </p>
                       </div>
                     </div>
@@ -81,7 +85,7 @@ class TeamPlayerInfo extends Component {
                       </div>
                       <div className="col-9 mb-2">
                         <p className="card-text text-dark fs-5">
-                          {teamPlayerInfo.born}
+                          {this.state.fullName}
                         </p>
                       </div>
                       <div className="col-3 mb-2">
@@ -91,7 +95,7 @@ class TeamPlayerInfo extends Component {
                       </div>
                       <div className="col-9 mb-2">
                         <p className="card-text text-dark fs-5">
-                          {teamPlayerInfo.birth_place}
+                          {this.props.birth_place}
                         </p>
                       </div>
                       <div className="col-3 mb-2 fw-bold">
@@ -99,7 +103,7 @@ class TeamPlayerInfo extends Component {
                       </div>
                       <div className="col-9 mb-2">
                         <p className="card-text text-dark fs-5">
-                          {teamPlayerInfo.role}
+                          {this.props.role}
                         </p>
                       </div>
                       <div className="col-3 mb-2 fw-bold">
@@ -109,7 +113,7 @@ class TeamPlayerInfo extends Component {
                       </div>
                       <div className="col-9 mb-2">
                         <p className="card-text text-dark fs-5">
-                          {teamPlayerInfo.batting_style}
+                          {this.props.batting_style}
                         </p>
                       </div>
                       <div className="col-3 mb-2 fw-bold">
@@ -119,7 +123,7 @@ class TeamPlayerInfo extends Component {
                       </div>
                       <div className="col-9 mb-2">
                         <p className="card-text text-dark fs-5">
-                          {teamPlayerInfo.bowling_style}
+                          {this.props.bowling_style}
                         </p>
                       </div>
                       <div className="col-3 mb-2 fw-bold">
@@ -127,15 +131,17 @@ class TeamPlayerInfo extends Component {
                       </div>
                       <div className="col-9 mb-2">
                         <p className="card-text text-dark fs-5">
-                          {teamPlayerInfo.team}
+                          {this.props.team}
                         </p>
                       </div>
                       <div className="col-3 mb-2 fw-bold">
-                        <p className="card-text text-dark fs-5 ml-2">Description:</p>
+                        <p className="card-text text-dark fs-5 ml-2">
+                          Description:
+                        </p>
                       </div>
                       <div className="col-9 mb-2">
                         <p className="card-text text-dark fs-5">
-                          {teamPlayerInfo.description}
+                          {this.props.description}
                         </p>
                       </div>
                     </div>
@@ -144,8 +150,7 @@ class TeamPlayerInfo extends Component {
               </div>
             </div>
           </>
-        ))}
-        <TeamPlayerStats teamPlayerclicked={this.state.teamPlayerclicked} />
+        {/* <TeamPlayerStats teamPlayerclicked={this.state.teamPlayerclicked} /> */}
       </div>
     );
   }

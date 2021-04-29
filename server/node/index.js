@@ -5,48 +5,17 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-// var cricapi = require("cricapi");
-// cricapi.setAPIKey("Uf7LXjV6kucaZmjXfGKJeU6nBqY2");
-// cricapi.matches(function (databundle) {
-//   //Variable "databundle" now contains JSON data in the below form
-//   "https://cricapi.com/api/playerStats?apikey=Uf7LXjV6kucaZmjXfGKJeU6nBqY2&pid=35320";
-// });
-
-////TEAM////
-////STADIUM////
-const team = require("./codes/Teams/Team/Team");
-const teamPlayers = require("./codes/Teams/TeamPlayers/teamPlayers");
-const stadiums = require("./codes/Stadiums/stadiums");
+const AllFiles = require("./layout");
 app.use(
-  teamPlayers.getTeamPlayers,
-  team.addTeam,
-  team.allTeams,
-  stadiums.addStadium,
-  stadiums.allStadiums,
-  stadiums.getStadium,
-);
-
-////PLAYER_INFO////////ROLE, BOWLINGSTYLE, BATTINGSTYLE////////PLAYER_STATS////
-const playerInfo = require("./codes/PlayerInfo/playerInfo");
-const playerStats = require("./codes/PlayerStats/playerStats");
-app.use(
-  playerInfo.addBattinStyle,
-  playerInfo.addPlayerInfo,
-  playerInfo.getPlayerInfo,
-  playerInfo.addRole,
-  playerInfo.addbowlingStyle,
-  playerStats.addPlayerStatsOdi,
-  playerStats.addPlayerStatsT20,
-  playerStats.addPlayerStatsTest,
-);
-
-////RECORDS////
-////BATTING_RECORDS, BOWLING_RECORDS////
-const battingRecords = require("./codes/Records/BattingRecords/battingRecords");
-const bowlingRecords = require("./codes/Records/BowlingRecords/bowlingRecords");
-app.use(
-  battingRecords.mostRuns.mostRunsTest,
-  bowlingRecords.mostWickets.mostWicketsTest,
+  AllFiles.team.addTeam,
+  AllFiles.team.allTeams,
+  AllFiles.teamPlayers.getTeamPlayerInfo,
+  AllFiles.teamPlayers.getTeamPlayers,
+  AllFiles.stadiums.addStadium,
+  AllFiles.playerInfo.addBattinStyle,
+  AllFiles.playerStats.addPlayerStatsOdi,
+  AllFiles.battingRecords.bestAverage.bestAverageOdi,
+  AllFiles.bowlingRecords.bestBBI.bestBBIOdi
 );
 
 app.listen(3001, () => {

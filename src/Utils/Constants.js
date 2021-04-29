@@ -17,6 +17,7 @@ export const SERVER_ACTIONS = {
   ADD_PLAYER_STATS_TEST: "/add-player-stats-test",
   ADD_PLAYER_STATS_ODI: "/add-player-stats-odi",
   ADD_PLAYER_STATS_T20: "/add-player-stats-t20",
+  SEARCH_PLAYER_BY_NAME:"/search-player-by-name",
   //////////RECORDS////////////
   /////BATTING_RECORDS/////
   MOST_RUNS_TEST: "/most-runs-test",
@@ -103,7 +104,7 @@ export const PAGE_URLS = {
   ADMIN: "/admin",
   ADD_PLAYER_INFO: "/add-player-info",
   VIEW_PLAYER_INFO: "/view-player-info/:id",
-  VIEW_TEAM_PLAYER_INFO: "/view-team-player-info/:id",
+  VIEW_TEAM_PLAYER_INFO: "/view-team-player-info/:id/:playerId",
   ADD_PLAYER_STATS: "/add-player-stats/:id",
   ADD_STADIUM: "/add-stadium",
   ADD_BATTING_STYLE: "/add-batting-style",
@@ -115,6 +116,7 @@ export const PAGE_URLS = {
   ALL_STADIUMS: "/all-stadiums",
   VIEW_STADIUM: "/view-stadium/:id",
   TEAM_PLAYER_VIEW: "/view-team-players/:id",
+  SEARCH_PLAYER: "/seach-player",
   ///////////////RECORDS////////////////
   RECORDS: "/records",
   /////BATTING_RECORDS//////

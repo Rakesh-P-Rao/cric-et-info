@@ -74,6 +74,11 @@ function HeaderComponent() {
                 </ul>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to={PAGE_URLS.SEARCH_PLAYER}>
+                  Search
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link
                   className="nav-link disabled"
                   to="#"
@@ -84,6 +89,7 @@ function HeaderComponent() {
                 </Link>
               </li>
             </ul>
+
             <form className="d-flex">
               <input
                 className="form-control me-2"

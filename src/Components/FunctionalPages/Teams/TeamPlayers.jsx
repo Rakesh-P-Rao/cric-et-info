@@ -29,7 +29,7 @@ class TeamPlayers extends Component {
         <div className="row">
           <div className="col-11">
             {this.state.teamPlayers.map((tpList) => (
-              <TeamPlayer tpList={tpList} key={tpList.id} />
+              <TeamPlayer tpList={tpList} key={tpList.playerId} teamClicked={this.state.teamClicked} />
             ))}
           </div>
         </div>

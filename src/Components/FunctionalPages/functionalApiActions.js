@@ -273,6 +273,39 @@ export function savePlayerStatsT20ToList(data, formAction) {
     );
 }
 
+/////SEARCH_PLAYER/////
+// export function getSearchedPlayersByName() {
+//   return new HttpRequest(`${SERVER_ACTIONS.SEARCH_PLAYER_BY_NAME}`, "GET")
+//     .requestWithAuthentication()
+//     .then(
+//       (response) => {
+//         return Promise.resolve(response.data);
+//       },
+//       (error) => {
+//         return Promise.reject(error);
+//       }
+//     );
+// }
+
+export function getSearchedPlayersByName(data, formAction) {
+  return new HttpRequest(
+    `${SERVER_ACTIONS.SEARCH_PLAYER_BY_NAME}`,
+    "POST",
+    data
+  )
+    .requestWithAuthentication()
+    .then(
+      (response) => {
+        alert("Searching Player!!!!");
+        return Promise.resolve(response.data);
+      },
+      (error) => {
+        alert("Error in finding player!!!!!");
+        return Promise.reject(error);
+      }
+    );
+}
+
 ///////////////RECORDS/////////////////
 /////BATTING_RECORDS/////
 /////MOST_RUNS/////

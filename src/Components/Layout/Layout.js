@@ -46,6 +46,7 @@ import MostBallsBowled from "../FunctionalPages/Records/BowlingRecords/MostBalls
 import MostRunsConceded from "../FunctionalPages/Records/BowlingRecords/MostRunsConceded";
 import BestBowlingStrikeRate from "../FunctionalPages/Records/BowlingRecords/BestBowlingStrikeRate";
 import BestBowlingAverage from "../FunctionalPages/Records/BowlingRecords/BestBowlingAverage";
+import SearchPlayer from "../FunctionalPages/SearchPlayer/SearchPlayer";
 
 class Layout extends Component {
   constructor(props) {
@@ -199,6 +200,11 @@ class Layout extends Component {
             />
             <Route path={PAGE_URLS.MOST_5W} exact component={Most5W} />
             <Route path={PAGE_URLS.MOST_10W} exact component={Most10W} />
+            <Route
+              path={PAGE_URLS.SEARCH_PLAYER}
+              exact
+              component={SearchPlayer}
+            />
 
             <Route path={PAGE_URLS.PAGE_NOT_FOUND} component={PageNotFound} />
           </Switch>
